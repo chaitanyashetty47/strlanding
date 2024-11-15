@@ -1,7 +1,8 @@
 "use client"
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import ContactForm from '@/components/forms/ContactForm';
+import ContactForm from "@/components/forms/ContactForm"
 
 const Banner = () => {
   const [showForm, setShowForm] = useState(false);
