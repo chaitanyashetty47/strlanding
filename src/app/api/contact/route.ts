@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient()
+import prisma from '@/config/prisma.config';
+
 
 export async function POST(request: NextRequest) {
   const { name, surname, email, country, dialCode, contactNumber, appointmentDate, appointmentTime, servicesInterested } = await request.json();
@@ -23,9 +24,25 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json({ success: true, data: newContact }, { status: 201 });
-  } catch (error) {
+  } catch (error:any) {
     console.error(error);
-    return NextResponse.json({ success: false, error: 'Failed to submit form' }, { status: 500 });
+    // return NextResponse.json({ success: false, error: 'Failed to submit form' }, { status: 500 });
+ 
+      console.error('Detailed error:', {
+        message: error.message,
+        stack: error.stack,
+        code: error.code
+      });
+      return NextResponse.json(
+        { 
+          success: false, 
+          error: 'Failed to submit form',
+          details: error.message,
+          code: error.code
+        }, 
+        { status: 500 }
+      );
+    
   } finally {
     await prisma.$disconnect();
   }
