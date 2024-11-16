@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12 grid gap-8 sm:grid-cols-3">
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Company</h3>
-          <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+          <ul className="space-y-2 text-sm text-gray-800 dark:text-gray-400">
             <li>
               <Link href="#">About Us</Link>
             </li>
@@ -27,9 +27,9 @@ export default function Footer() {
         <div className="space-y-2 justify-self-end">
           <h3 className="text-lg font-semibold">Stay Connected</h3>
           <div className="space-y-2">
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <Button>Join Our Waitlist</Button>
-            </div>
+            </div> */}
             <div className="flex gap-4 text-gray-500 dark:text-gray-400">
               <Link className="hover:text-gray-900 dark:hover:text-gray-100" href="#">
                 <Facebook className="h-5 w-5" />

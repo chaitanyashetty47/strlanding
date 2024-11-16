@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import ContactForm from "@/components/forms/ContactForm"
+import { ContactForm } from "@/components/forms/ContactForm"
 
 const Banner = () => {
   const [showForm, setShowForm] = useState(false);
@@ -25,8 +25,8 @@ const Banner = () => {
               >
                 Start Your Journey Today
               </Button>
+              <ContactForm open={showForm} onOpenChange={setShowForm} />
             </div>
-            {showForm && <ContactForm />}
           </div>
         </div>
       </section>
