@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import ProgramsCard from "@/components/Programs";
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Header/>
       <Hero/>
       <Testimonials/>
+      <ProgramsCard/>
       <Team/>
       <Banner/>
       <FAQSection/>

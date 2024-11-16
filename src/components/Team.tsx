@@ -66,7 +66,7 @@ export default function Team() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-purple-600">Meet Our Team</h2>
-          <p className="max-w-[900px] text-zinc-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
+          <p className="max-w-[900px] text-gray-700 font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
           Our Expert Team is comprised of fitness specialist, psychological expert, life coach, and manifestation mentor. Together, they bring a holistic blend of knowledge and passion to empower your journey toward wellness and transformation.
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function Team() {
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">{member.name}</h3>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400">{member.role}</p>
+                  <p className="text-sm text-gray-700 font-medium dark:text-zinc-400">{member.role}</p>
                   <div className="flex space-x-3 mt-4">
                     {member.social.twitter && (
                       <Link

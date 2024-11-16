@@ -26,3 +26,15 @@ model ContactSubmission {
   servicesInterested String[]
   createdAt        DateTime @default(now())
 }
+
+
+model GumroadPurchases {
+  id          Int      @id @default(autoincrement())
+  email       String
+  productName String
+  createdAt   DateTime @default(now())
+  amount      Float?
+  status      String   @default("completed")
+  
+  @@index([email])
+}

@@ -30,7 +30,7 @@ export default function Hero() {
           <span className="text-2xl md:text-5xl font-semibold text-purple-700 py-2 text-center md:text-left">
             Wellness Programs<br />Made For YOU
           </span>
-          <span className="text-base md:text-xl font-medium text-center md:text-left mb-4">
+          <span className="text-base md:text-xl font-semibold text-center md:text-left mb-4">
             Personalized Pathways to Your Best Self, Crafted By Our Experts<br />
             Just for You, Because Every Journey is Unique
           </span>
@@ -42,7 +42,7 @@ export default function Hero() {
             </Button>
             <Button className="shadow-2xl h-10 rounded-full bg-white border border-gray-300">
               <span className="whitespace-pre-wrap text-center text-sm font-medium text-black lg:text-lg">
-                Explore
+                Book A Call
               </span>
             </Button>
           </div>
@@ -61,13 +61,13 @@ export default function Hero() {
       </div>
 
       {/* Guarantee Badges */}
-      <div className="flex flex-wrap justify-center gap-4 mt-8">
+      <div className="flex flex-wrap justify-center gap-4 mt-8 ">
         {guarantees.map((guarantee, index) => (
-          <div key={index} className="flex items-center gap-2 bg-white rounded-full px-4 py-2">
+          <div key={index} className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-lg">
             <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
               <Check className="w-4 h-4 text-green-500" />
             </div>
-            <span className="text-sm font-medium">{guarantee}</span>
+            <span className="text-sm font-bold">{guarantee}</span>
           </div>
         ))}
       </div>

@@ -15,7 +15,7 @@ const Banner = () => {
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
               Ready to Transform Your Wellness Journey?
             </h1>
-            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="mx-auto max-w-[700px] text-gray-700 font-medium md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               Join hundreds of individuals who have transformed their lives with STRENTOR
             </p>
             <div className="mx-auto max-w-sm space-y-2">
