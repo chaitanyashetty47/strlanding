@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import {
   Dialog,
   DialogContent,
@@ -12,9 +12,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import DatePicker from 'react-datepicker';
 import countriesData from "@/utils/countries.json"
 import 'react-datepicker/dist/react-datepicker.css';
+import { Search } from 'lucide-react';
 
 type FormData = {
   name: string;
@@ -49,26 +49,77 @@ const initialFormData: FormData = {
 
 export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) => {
   const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  // const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredCountries, setFilteredCountries] = useState(countriesData);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleDateChange = (date: Date | null) => {
-    setSelectedDate(date);
-    setFormData({ ...formData, appointmentDate: date, appointmentTime: '' });
-  };
+  // const handleDateChange = (date: Date | null) => {
+  //   setSelectedDate(date);
+  //   setFormData({ ...formData, appointmentDate: date, appointmentTime: '' });
+  // };
+
+ 
 
   const handleSelectChange = (name: string, value: string) => {
-    setFormData({ ...formData, [name]: value });
+    if (name === 'country') {
+      // Find the corresponding country object when a country is selected
+      const selectedCountry = countriesData.find(country => country.name === value);
+      if (selectedCountry) {
+        setFormData(prev => ({
+          ...prev,
+          country: selectedCountry.name, // Use country name
+          dialCode: selectedCountry.dial_code
+        }));
+      }
+    } else if (name === 'dialCode') {
+      // If dial code is changed manually, just update the dial code
+      setFormData(prev => ({
+        ...prev,
+        dialCode: value
+      }));
+    } else {
+      // Handle other select changes normally
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
+  
+  useEffect(() => {
+    const filtered = countriesData.filter(country =>
+      country.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+    );
+    setFilteredCountries(filtered);
+  }, [searchQuery]);
+
+  // Add keyboard event handler for country select
+  const handleCountryKeyDown = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^[a-zA-Z\s]*$/.test(value)) {
+      setSearchQuery(value);
+    }
+  };
+
+  const handleCountrySearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const key = e.key;
+    // Prevent numeric keys and any other unwanted keys
+    if (!isNaN(Number(key))) {
+      e.preventDefault();
+    }
+  };
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/sheets', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -91,17 +142,17 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
 
   const clearForm = () => {
     setFormData(initialFormData);
-    setSelectedDate(null);
+
   };
 
-  const getAvailableTimeSlots = () => {
-    if (!selectedDate) return [];
-    const day = selectedDate.getDay();
-    const isWeekend = day === 0;
-    return isWeekend
-      ? ['1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM']
-      : ['1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'];
-  };
+  // const getAvailableTimeSlots = () => {
+  //   if (!selectedDate) return [];
+  //   const day = selectedDate.getDay();
+  //   const isWeekend = day === 0;
+  //   return isWeekend
+  //     ? ['1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM']
+  //     : ['1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'];
+  // };
 
   const handleCheckboxChange = (service: string) => {
     setFormData((prev) => {
@@ -137,16 +188,41 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
 
           <div className="flex items-center gap-4">
             <Label htmlFor="country" className="w-1/3">Country</Label>
-            <Select name="country" value={formData.country} onValueChange={(value) => handleSelectChange('country', value)}>
+            <Select 
+              name="country" 
+              value={formData.country} 
+              onValueChange={(value) => handleSelectChange('country', value)}
+            >
               <SelectTrigger>
                 <SelectValue placeholder="Select a country" />
               </SelectTrigger>
-              <SelectContent>
-                {countriesData.map((country) => (
-                  <SelectItem key={country.code} value={country.code}>
-                    {country.emoji} {country.name}
-                  </SelectItem>
-                ))}
+              <SelectContent 
+                onChange={handleCountryKeyDown}
+                className="max-h-[300px]"
+              >
+                <div className="sticky top-0 bg-white p-2 border-b">
+                  <div className="flex items-center px-2 py-1 border rounded-md">
+                    <Search className="w-4 h-4 mr-2 text-gray-400" />
+                    <input
+                      className="w-full border-none outline-none bg-transparent placeholder:text-gray-400"
+                      placeholder="Search countries..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyDown={handleCountrySearchKeyDown}
+                    />
+                  </div>
+                </div>
+                <div className="pt-2">
+                  {filteredCountries.length > 0 ? ( filteredCountries.map((country) => (
+                    <SelectItem key={country.code} value={country.name}>
+                      {country.emoji} {country.name}
+                    </SelectItem>
+                  ))):
+                  (
+                    <p className="text-sm text-gray-500 p-2">No countries found</p>
+
+                  )}
+                </div>
               </SelectContent>
             </Select>
           </div>
@@ -177,33 +253,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
               />
             </div>
           </div>
-
-          <div className="flex items-center gap-4">
-            <Label className="w-1/3">Appointment Date</Label>
-            <DatePicker
-              selected={selectedDate}
-              onChange={handleDateChange}
-              minDate={new Date()}
-              className="w-full p-2 border rounded"
-              placeholderText="Select appointment date"
-            />
-          </div>
-
-          {selectedDate && (
-            <div className="flex items-center gap-4">
-              <Label htmlFor="appointmentTime" className="w-1/3">Time</Label>
-              <Select name="appointmentTime" value={formData.appointmentTime} onValueChange={(value) => setFormData({ ...formData, appointmentTime: value })}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select time" />
-                </SelectTrigger>
-                <SelectContent>
-                  {getAvailableTimeSlots().map((time) => (
-                    <SelectItem key={time} value={time}>{time}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-          )}
 
           <div>
             <Label className="block font-medium text-gray-700">Services Interested (Select Multiple)</Label>

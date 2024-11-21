@@ -6,6 +6,7 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import { ContactForm } from "@/components/forms/ContactForm";
 
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
@@ -19,6 +20,7 @@ export default function Header() {
     <>
       <header className="container mx-auto px-4 border-b shadow-xl">
         <div className="flex items-center justify-between py-3 md:py-5">
+          
           <div>
             <Image
               src="/strentor.png"
@@ -39,15 +41,15 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-5 items-center font-semibold">
-            <a href="/" className="hover:text-purple-500">About Us</a>
-            <a href="/" className="hover:text-purple-500">Programs</a>
+            <a href="/aboutus" className="hover:text-purple-500">About Us</a>
+            <a href="/programs" className="hover:text-purple-500">Programs</a>
             <a href="/services" className="hover:text-purple-500">Resources</a>
             <Button 
               className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-purple-500 to-purple-700"
               onClick={handleJoinNowClick}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
-                Join Now
+                Book A Call
               </span>
             </Button>
           </div>
@@ -64,7 +66,7 @@ export default function Header() {
               onClick={handleJoinNowClick}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
-                Join Now
+                Book A Call
               </span>
             </Button>
           </div>

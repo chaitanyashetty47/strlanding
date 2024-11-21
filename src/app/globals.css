@@ -31,6 +31,14 @@ a {
   }
 }
 
+:root {
+  --strentor-red: #F31818;
+  --strentor-green: #00D115;
+  --strentor-orange: #FFBD22;
+  --strentor-blue: #0D97FF;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

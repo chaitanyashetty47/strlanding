@@ -3,6 +3,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import { Star, Check} from 'lucide-react';
 
 const ProgramsCard = () => {
   const programs = [
@@ -86,6 +87,38 @@ const ProgramsCard = () => {
             ))}
           </div>
         </div>
+
+        <div className="mt-20">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl font-bold text-purple-800 mb-6">Why Choose Our Programs?</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Tailored Approaches",
+                  description: "Programs designed to fit your unique needs.",
+                  icon: <Check className="text-green-700 w-8 h-8 mx-auto" />,
+                },
+                {
+                  title: "Expert Coaches",
+                  description: "Guidance from certified professionals.",
+                  icon: <Star className="text-yellow-500 w-8 h-8 mx-auto" />,
+                },
+                {
+                  title: "Holistic Transformation",
+                  description: "Integrated mental, physical, and emotional support.",
+                  icon: <Star className="text-purple-700 w-8 h-8 mx-auto" />,
+                },
+              ].map((item, index) => (
+                <div key={index} className="p-6 bg-white rounded-lg shadow-md">
+                  {item.icon}
+                  <h3 className="text-xl font-bold text-purple-800 mt-4">{item.title}</h3>
+                  <p className="text-sm text-purple-700 mt-2">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
