@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { ContactForm } from "@/components/forms/ContactForm";
-
+//import Link from "next/link"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,13 +22,15 @@ export default function Header() {
         <div className="flex items-center justify-between py-3 md:py-5">
           
           <div>
-            <Image
-              src="/strentor.png"
-              width={48}
-              height={48}
-              alt="Strentor Logo"
-              className="object-fit"
-            />
+          
+              <Image
+                src="/strentor.png"
+                alt="Strentor Logo"
+                width={120}
+                height={40}
+                className="w-auto h-8"
+              />
+           
           </div>
 
           {/* Mobile Menu Button */}
@@ -41,11 +43,11 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-5 items-center font-semibold">
-            <a href="/aboutus" className="hover:text-purple-500">About Us</a>
-            <a href="/programs" className="hover:text-purple-500">Programs</a>
-            <a href="/services" className="hover:text-purple-500">Resources</a>
+            <a href="/aboutus" className="hover:text-red-500">About Us</a>
+            <a href="/programs" className="hover:text-red-500">Programs</a>
+            <a href="/services" className="hover:text-red-500">Resources</a>
             <Button 
-              className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-purple-500 to-purple-700"
+              className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
               onClick={handleJoinNowClick}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">

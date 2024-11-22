@@ -6,6 +6,7 @@ import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import ProgramsCard from "@/components/Programs";
+import Introduction from "@/components/Introduction";
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
     <div>
       <Header/>
       <Hero/>
+      <Introduction/>
       <Testimonials/>
       <ProgramsCard/>
       <Team/>

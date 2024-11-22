@@ -20,7 +20,7 @@ const Banner = () => {
             </p>
             <div className="mx-auto max-w-sm space-y-2">
               <Button
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-blue-700 hover:to-purple-700"
                 onClick={() => setShowForm(true)}
               >
                 Start Your Journey Today

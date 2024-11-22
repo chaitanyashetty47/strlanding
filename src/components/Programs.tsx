@@ -3,7 +3,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { Star, Check} from 'lucide-react';
 
 const ProgramsCard = () => {
   const programs = [
@@ -42,7 +41,7 @@ const ProgramsCard = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Headline Section */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-purple-600">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#F31818]">
             Our Programs
           </h2>
           <p className="max-w-[900px] text-gray-700 font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
@@ -88,7 +87,7 @@ const ProgramsCard = () => {
           </div>
         </div>
 
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold text-purple-800 mb-6">Why Choose Our Programs?</h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -117,7 +116,7 @@ const ProgramsCard = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </div>
