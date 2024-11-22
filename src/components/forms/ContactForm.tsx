@@ -145,7 +145,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
               <SelectTrigger>
                 <SelectValue placeholder="Select a country" />
               </SelectTrigger>
-              <SelectContent className="max-h-[300px]">
+              <SelectContent className="max-h-[400px] overflow-y-auto">
                 <div className="sticky top-0 bg-white p-2 border-b">
                   <div className="flex items-center px-2 py-1 border rounded-md">
                     <Search className="w-4 h-4 mr-2 text-gray-400" />
