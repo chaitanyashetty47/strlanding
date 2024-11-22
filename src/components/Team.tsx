@@ -21,8 +21,8 @@ export default function Team() {
   const team: TeamMember[] = [
     {
       name: "Aditya Mandan",
-      role: "Fitness Coach",
-      image:"/Me.png",
+      role: "Founder & Empowerment Coach",
+      image:"/Aditya.jpg",
       social: {
         twitter: "#",
         facebook: "#",
@@ -31,8 +31,8 @@ export default function Team() {
     },
     {
       name: "Anisha Jhunjhunwala",
-      role: "Mind and Emotion Specialist",
-      image:"/Anisha.jpg",
+      role: "Mind & Emotions Specialist",
+      image:"/Anisha.jpeg",
       social: {
         twitter: "#",
         facebook: "#",
@@ -41,7 +41,7 @@ export default function Team() {
     },
     {
       name: "Ashmita Dani",
-      role: "Manifestation Coach",
+      role: "Dreams to Reality Mentor",
       image:"/Ashmita.jpg",
       social: {
         twitter: "#",
@@ -51,8 +51,8 @@ export default function Team() {
     },
     {
       name: "Arun Kunjunny",
-      role: "Life Coach",
-      image:"/Arun.jpeg",
+      role: "Personal Transformation Architect",
+      image:"/Arun.jpg",
       social: {
         twitter: "#",
         facebook: "#",

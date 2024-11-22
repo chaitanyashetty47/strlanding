@@ -14,7 +14,7 @@ const ProgramsCard = () => {
       gradient: "from-blue-500 to-purple-500",
     },
     {
-      icon: "/fitness.svg",
+      icon: "/manifestation.svg",
       title: "Manifestation Guidance",
       description:
         "Discover your purpose and create a powerful personal manifestation for success",
@@ -28,7 +28,7 @@ const ProgramsCard = () => {
       gradient: "from-orange-500 to-red-500",
     },
     {
-      icon: "/life-coaching.svg",
+      icon: "/lifecoaching.png",
       title: "Life Coaching",
       description:
         "Strategic guidance to help you navigate life's challenges and achieve your dreams",

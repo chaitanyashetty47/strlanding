@@ -11,15 +11,15 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
-  const handleJoinNowClick = () => {
-    setShowForm(true);
-    setIsMenuOpen(false); // Close mobile menu when opening form
-  };
+  // const handleJoinNowClick = () => {
+  //   setShowForm(true);
+  //   setIsMenuOpen(false); // Close mobile menu when opening form
+  // };
 
   return (
     <>
       <header className="container mx-auto px-4 border-b shadow-xl">
-        <div className="flex items-center justify-between py-3 md:py-5">
+        <div className="flex items-center justify-between py-3 md:py-3">
           
           <div>
             <Link href="/" className="flex items-center">
@@ -27,11 +27,10 @@ export default function Header() {
                 src="/strentor.png"
                 alt="Strentor Logo"
                 width={120}
-                height={40}
-                className="w-14 h-8"
+                height={240}
+                className="w-32 h-24"
               />
             </Link>
-           
           </div>
 
           {/* Mobile Menu Button */}
@@ -49,7 +48,7 @@ export default function Header() {
             <a href="/resources" className="hover:text-red-500">Resources</a>
             <Button 
               className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
-              onClick={handleJoinNowClick}
+              onClick={() => window.open("https://calendly.com/strentor/strentor-four-wishes-program", "_blank")}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
                 Book A Call
@@ -66,7 +65,7 @@ export default function Header() {
             <a href="/resources" className="block hover:text-red-500 py-2">Resources</a>
             <Button 
               className="w-full shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
-              onClick={handleJoinNowClick}
+              onClick={() => window.open("https://calendly.com/strentor/strentor-four-wishes-program", "_blank")}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
                 Book A Call

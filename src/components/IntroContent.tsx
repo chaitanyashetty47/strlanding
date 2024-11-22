@@ -11,7 +11,7 @@ export function IntroContent() {
     {
       icon: "holistic",
       title: "Holistic Approach",
-      description: "Comprehensive wellness programs integrating physical, mental, and spiritual growth"
+      description: "Comprehensive wellness programs integrating physical and mental growth"
     },
     {
       icon: "inclusivity",

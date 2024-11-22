@@ -12,7 +12,7 @@ export default function TeamPage() {
     {
       name: "Anisha Jhunjhunwala",
       role: "Emotional Wellness and Therapy",
-      image: "/Anisha.jpg",
+      image: "/Anisha.jpeg",
       qualifications: [
         "Master's in Psychology and specialized training from NIMHANS, Bangalore",
         "Over 2,000 hours of therapy with 450 individuals",
@@ -27,7 +27,7 @@ export default function TeamPage() {
     {
       name: "Arun Kunjunny",
       role: "NLP and Communication Coaching",
-      image: "/Arun.jpeg",
+      image: "/Arun.jpg",
       qualifications: [
         "Expertise in Corporate Communication, PR, Photography, Poetry, and Filmmaking",
         "Certified NLP Practitioner and Life Coach",
@@ -56,7 +56,7 @@ export default function TeamPage() {
     {
       name: "Aditya Mandan",
       role: "Fitness and Nutrition Coaching",
-      image: "/Me.png",
+      image: "/Aditya.jpg",
       qualifications: [
         "National-level Para Powerlifter",
         "Certified Fitness Trainer (Level 2, PEPT) and Nutrition Consultant",

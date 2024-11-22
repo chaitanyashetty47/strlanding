@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-[#F31818]/5 via-[#00D115]/5 to-[#0D97FF]/5" />
         
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto p-4">
           <div className="relative flex flex-col md:grid md:grid-cols-2 gap-8 p-6 md:p-12 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl">
             {/* Headline Section */}
             <div className="flex flex-col justify-center space-y-6">
@@ -69,19 +69,21 @@ export default function Hero() {
           </div>
 
           {/* Guarantee Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
+          {/* Guarantee Badges */}
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 mt-8">
             {guarantees.map((guarantee, index) => (
-              <div 
-                key={index} 
-                className="flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg transform hover:scale-105 transition-all"
+              <div
+                key={index}
+                className="flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-lg transform hover:scale-105 transition-all w-full sm:w-auto"
               >
-                <div className="w-8 h-8 rounded-full bg-[#00D115] flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#00D115] flex items-center justify-center">
                   <Check className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-base font-bold text-gray-800">{guarantee}</span>
               </div>
             ))}
           </div>
+
         </div>
       </div>
 
