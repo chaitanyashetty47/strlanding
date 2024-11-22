@@ -80,7 +80,7 @@ const ProductPage = () => {
 
               <Button 
                 onClick={handlePurchase}
-                className="w-full md:w-auto h-12 px-8 text-lg rounded-full bg-gradient-to-b from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800"
+                className="w-full md:w-auto h-12 px-8 text-lg rounded-full bg-gradient-to-b from-red-500 to-red-700 hover:from-red-600 hover:to-red-800"
               >
                 <span className="mr-2">Buy Now</span>
                 <ArrowRight className="h-5 w-5" />
