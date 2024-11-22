@@ -96,7 +96,7 @@ export default function TeamPage() {
             <Card key={index} className="overflow-hidden border-none shadow-xl">
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-8 space-y-6">
+                  <div className="p-8 space-y-6 order-2 md:order-none">
                     <div>
                       <h2 className="text-4xl font-bold text-gray-900 mb-2">{member.name}</h2>
                       <Badge className="bg-[#FFBD22] text-black text-md font-semibold">
@@ -136,7 +136,7 @@ export default function TeamPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-[600px] bg-gray-100">
+                  <div className="relative h-[600px] bg-gray-100 order-1 md:order-none">
                     <Image
                       src={member.image}
                       alt={`${member.name} - ${member.role}`}
