@@ -1,3 +1,4 @@
+"use client"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -126,8 +127,9 @@ export default function TeamPage() {
                         </div>
                       </div>
                       <div className="mt-8">
-                        <Button 
+                        <Button
                           className="bg-[#F31818] hover:bg-[#F31818]/90 text-lg font-bold text-white rounded-full px-8 py-6"
+                          onClick={() => window.open("https://calendly.com/strentor/strentor-four-wishes-program", "_blank")}
                         >
                           Schedule a Session
                         </Button>
