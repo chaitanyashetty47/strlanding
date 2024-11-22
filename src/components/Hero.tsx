@@ -31,9 +31,9 @@ export default function Hero() {
             {/* Headline Section */}
             <div className="flex flex-col justify-center space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold">
-                <span className="text-[#F31818]">Transform</span> Your Life,
+                 Wellness Programs
                 <br />
-                <span className="text-[#00D115]">Empower</span> Your Journey
+                Made For <span className="text-[#F31818]">YOU</span>
               </h1>
               <p className="text-xl md:text-2xl font-medium text-gray-700">
                 Personalized pathways to your best self, crafted by experts who understand your unique journey.
