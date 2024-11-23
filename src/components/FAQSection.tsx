@@ -59,7 +59,7 @@ const FAQSection = () => {
             <li>Achieve personal and professional goals</li>
             <li>Cultivate a positive and empowered mindset</li>
           </ul>
-          <p>The results depend on your commitment, but we're here to support you every step of the way!</p>
+          <p>The results depend on your commitment, but we&apos;re here to support you every step of the way!</p>
         </div>
       )
     },

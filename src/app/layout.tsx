@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 // import { Inter } from "next/font/google"
 import "./globals.css"
 import localFont from 'next/font/local';
-import { Toaster } from "@/components/ui/toaster"
 
 // const inter = Inter({ subsets: ["latin"] })
 
@@ -32,7 +31,7 @@ export default function RootLayout({
         <main className="min-h-screen">
           {children}
         </main>
-        <Toaster />
+ 
       </body>
     </html>
   )

@@ -19,9 +19,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import countriesData from "@/utils/countries.json";
-import { Search } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
+import { Search, Loader2 } from "lucide-react";
 
 type FormData = {
   name: string;
@@ -55,10 +53,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCountries, setFilteredCountries] = useState(countriesData);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
   useEffect(() => {
-    // Debounce search logic for better performance
     const timeout = setTimeout(() => {
       const filtered = countriesData.filter((country) =>
         country.name.toLowerCase().startsWith(searchQuery.toLowerCase())
@@ -107,22 +104,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
       const result = await response.json();
       console.log("Form submitted successfully:", result);
       
-      toast({
-        title: "Success!",
-        description: "Your form has been submitted successfully.",
-        duration: 5000,
-      });
-
       clearForm();
       onOpenChange(false);
+      setShowSuccessDialog(true);
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast({
-        title: "Error",
-        description: "Failed to submit form. Please try again.",
-        variant: "destructive",
-        duration: 5000,
-      });
     } finally {
       setIsSubmitting(false);
     }
@@ -131,162 +117,175 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
   const clearForm = () => setFormData(initialFormData);
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto ">
-        <DialogHeader>
-          <DialogTitle className="text-center">Contact Details</DialogTitle>
-        </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/** Name Fields */}
-          {["name", "surname", "email"].map((field) => (
-            <div key={field} className="flex items-center gap-4">
-              <Label htmlFor={field} className="w-1/3 capitalize">
-                {field}
+    <>
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-center">Contact Details</DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Rest of the form content remains the same */}
+            {["name", "surname", "email"].map((field) => (
+              <div key={field} className="flex items-center gap-4">
+                <Label htmlFor={field} className="w-1/3 capitalize">
+                  {field}
+                </Label>
+                <Input
+                  id={field}
+                  name={field}
+                  required
+                  value={formData[field as keyof FormData] as string}
+                  onChange={handleInputChange}
+                />
+              </div>
+            ))}
+
+            <div className="flex items-center gap-4">
+              <Label htmlFor="country" className="w-1/3">
+                Country
               </Label>
-              <Input
-                id={field}
-                name={field}
-                required
-                value={formData[field as keyof FormData] as string}
-                onChange={handleInputChange}
-              />
-            </div>
-          ))}
-
-          {/** Country Selection */}
-          <div className="flex items-center gap-4">
-            <Label htmlFor="country" className="w-1/3">
-              Country
-            </Label>
-            <Select
-              name="country"
-              value={formData.country}
-              onValueChange={(value) => handleSelectChange("country", value)}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select a country" />
-              </SelectTrigger>
-              <SelectContent 
-                className="max-h-[300px] overflow-hidden" 
-                position="popper"
-                side="bottom"
-                align="start"
-                sideOffset={5}
-              >
-                <div className="sticky top-0 z-50 bg-white p-2 border-b shadow-sm">
-                  <div className="flex items-center px-2 py-1 border rounded-md">
-                    <Search className="w-4 h-4 mr-2 text-gray-400" />
-                    <input
-                      className="w-full border-none outline-none bg-transparent placeholder:text-gray-400"
-                      placeholder="Search countries..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="pt-2 overflow-y-auto">
-                  {filteredCountries.length > 0 ? (
-                    filteredCountries.map((country) => (
-                      <SelectItem key={country.code} value={country.name}>
-                        {country.emoji} {country.name}
-                      </SelectItem>
-                    ))
-                  ) : (
-                    <p className="text-sm text-gray-500 p-2">No countries found</p>
-                  )}
-                </div>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/** Contact Number */}
-          <div className="flex items-center gap-4">
-            <Label htmlFor="contactNumber" className="w-1/3">
-              Mobile No.
-            </Label>
-            <div className="flex space-x-2">
               <Select
-                name="dialCode"
-                value={formData.dialCode}
-                onValueChange={(value) => handleSelectChange("dialCode", value)}
+                name="country"
+                value={formData.country}
+                onValueChange={(value) => handleSelectChange("country", value)}
               >
-                <SelectTrigger className="w-24">
-                  <SelectValue placeholder="Code" />
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a country" />
                 </SelectTrigger>
-                <SelectContent>
-                  {countriesData.map((country) => (
-                    <SelectItem key={country.code} value={country.dial_code}>
-                      {country.emoji} {country.dial_code}
-                    </SelectItem>
-                  ))}
+                <SelectContent 
+                  className="max-h-[300px] overflow-hidden" 
+                  position="popper"
+                  side="bottom"
+                  align="start"
+                  sideOffset={5}
+                >
+                  <div className="sticky top-0 z-50 bg-white p-2 border-b shadow-sm">
+                    <div className="flex items-center px-2 py-1 border rounded-md">
+                      <Search className="w-4 h-4 mr-2 text-gray-400" />
+                      <input
+                        className="w-full border-none outline-none bg-transparent placeholder:text-gray-400"
+                        placeholder="Search countries..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                  <div className="pt-2 overflow-y-auto">
+                    {filteredCountries.length > 0 ? (
+                      filteredCountries.map((country) => (
+                        <SelectItem key={country.code} value={country.name}>
+                          {country.emoji} {country.name}
+                        </SelectItem>
+                      ))
+                    ) : (
+                      <p className="text-sm text-gray-500 p-2">No countries found</p>
+                    )}
+                  </div>
                 </SelectContent>
               </Select>
-              <Input
-                id="contactNumber"
-                name="contactNumber"
-                type="tel"
-                required
-                value={formData.contactNumber}
-                onChange={handleInputChange}
-                className="flex-1"
-              />
             </div>
-          </div>
 
-          {/** Services Interested */}
-          <div>
-            <Label className="block font-medium text-gray-700">Services Interested</Label>
-            <div className="flex flex-col gap-2 mt-2">
-              {serviceOptions.map((service) => (
-                <label key={service} className="flex items-center space-x-2">
-                  <input
-                    type="checkbox"
-                    value={service}
-                    checked={formData.servicesInterested.includes(service)}
-                    onChange={() => handleCheckboxChange(service)}
-                  />
-                  <span>{service}</span>
-                </label>
-              ))}
+            <div className="flex items-center gap-4">
+              <Label htmlFor="contactNumber" className="w-1/3">
+                Mobile No.
+              </Label>
+              <div className="flex space-x-2">
+                <Select
+                  name="dialCode"
+                  value={formData.dialCode}
+                  onValueChange={(value) => handleSelectChange("dialCode", value)}
+                >
+                  <SelectTrigger className="w-24">
+                    <SelectValue placeholder="Code" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {countriesData.map((country) => (
+                      <SelectItem key={country.code} value={country.dial_code}>
+                        {country.emoji} {country.dial_code}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <Input
+                  id="contactNumber"
+                  name="contactNumber"
+                  type="tel"
+                  required
+                  value={formData.contactNumber}
+                  onChange={handleInputChange}
+                  className="flex-1"
+                />
+              </div>
             </div>
-          </div>
 
-          {/** Submit Buttons */}
-          <div className="flex justify-end space-x-4">
-            <Button 
-              type="button" 
-              variant="outline" 
-              onClick={clearForm}
-              disabled={isSubmitting}
-            >
-              Clear
-            </Button>
-            <DialogClose asChild>
+            <div>
+              <Label className="block font-medium text-gray-700">Services Interested</Label>
+              <div className="flex flex-col gap-2 mt-2">
+                {serviceOptions.map((service) => (
+                  <label key={service} className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      value={service}
+                      checked={formData.servicesInterested.includes(service)}
+                      onChange={() => handleCheckboxChange(service)}
+                    />
+                    <span>{service}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex justify-end space-x-4">
               <Button 
                 type="button" 
-                variant="outline"
+                variant="outline" 
+                onClick={clearForm}
                 disabled={isSubmitting}
               >
-                Cancel
+                Clear
               </Button>
-            </DialogClose>
-            <Button 
-              type="submit"
-              disabled={isSubmitting}
-              className="min-w-[100px]"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Submitting...
-                </>
-              ) : (
-                'Submit'
-              )}
+              <DialogClose asChild>
+                <Button 
+                  type="button" 
+                  variant="outline"
+                  disabled={isSubmitting}
+                >
+                  Cancel
+                </Button>
+              </DialogClose>
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                className="min-w-[100px] bg-[#F31818]"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  'Submit'
+                )}
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
+
+      {/* Success Dialog */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle>Details Submitted</DialogTitle>
+          </DialogHeader>
+          <p className="text-center py-4">We Will Reach Out To You Soon!</p>
+          <div className="flex justify-end">
+            <Button className = "bg-[#F31818]" onClick={() => setShowSuccessDialog(false)}>
+              Close
             </Button>
           </div>
-        </form>
-      </DialogContent>
-    </Dialog>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
