@@ -190,6 +190,7 @@ export default function TeamPage() {
           </p>
           <Button 
             className="bg-[#F31818] hover:bg-[#F31818]/90 text-white font-bold rounded-full px-8 py-6 text-lg"
+            onClick={() => window.open("https://calendly.com/strentor/strentor-four-wishes-program", "_blank")}
           >
             Start Your Transformation
           </Button>
