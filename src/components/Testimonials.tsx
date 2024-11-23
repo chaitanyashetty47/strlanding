@@ -28,10 +28,6 @@ const Testimonials = () => {
       author: "Tanushree Das"
     },
     {
-      quote: "For me it was the first time talking with a person, things that are personal related. I felt so confident..",
-      author: "John Doe"
-    },
-    {
       quote: "I felt motivated throughout the program, and each session with Aditya brought new learning.",
       author: "Priya Patel"
     },
