@@ -20,6 +20,8 @@ import {
 import { Button } from "@/components/ui/button";
 import countriesData from "@/utils/countries.json";
 import { Search } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Loader2 } from "lucide-react";
 
 type FormData = {
   name: string;
@@ -52,6 +54,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredCountries, setFilteredCountries] = useState(countriesData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     // Debounce search logic for better performance
@@ -89,6 +93,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     try {
       const response = await fetch("/api/sheets", {
         method: "POST",
@@ -100,10 +106,25 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
 
       const result = await response.json();
       console.log("Form submitted successfully:", result);
+      
+      toast({
+        title: "Success!",
+        description: "Your form has been submitted successfully.",
+        duration: 5000,
+      });
+
       clearForm();
       onOpenChange(false);
     } catch (error) {
       console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit form. Please try again.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -111,9 +132,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto ">
         <DialogHeader>
-          <DialogTitle>Form Details</DialogTitle>
+          <DialogTitle className="text-center">Contact Details</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-6">
           {/** Name Fields */}
@@ -145,8 +166,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
               <SelectTrigger>
                 <SelectValue placeholder="Select a country" />
               </SelectTrigger>
-              <SelectContent className="max-h-[300px]">
-                <div className="sticky top-0 bg-white p-2 border-b">
+              <SelectContent 
+                className="max-h-[300px] overflow-hidden" 
+                position="popper"
+                side="bottom"
+                align="start"
+                sideOffset={5}
+              >
+                <div className="sticky top-0 z-50 bg-white p-2 border-b shadow-sm">
                   <div className="flex items-center px-2 py-1 border rounded-md">
                     <Search className="w-4 h-4 mr-2 text-gray-400" />
                     <input
@@ -157,7 +184,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
                     />
                   </div>
                 </div>
-                <div className="pt-2">
+                <div className="pt-2 overflow-y-auto">
                   {filteredCountries.length > 0 ? (
                     filteredCountries.map((country) => (
                       <SelectItem key={country.code} value={country.name}>
@@ -226,15 +253,37 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
 
           {/** Submit Buttons */}
           <div className="flex justify-end space-x-4">
-            <Button type="button" variant="outline" onClick={clearForm}>
+            <Button 
+              type="button" 
+              variant="outline" 
+              onClick={clearForm}
+              disabled={isSubmitting}
+            >
               Clear
             </Button>
             <DialogClose asChild>
-              <Button type="button" variant="outline">
+              <Button 
+                type="button" 
+                variant="outline"
+                disabled={isSubmitting}
+              >
                 Cancel
               </Button>
             </DialogClose>
-            <Button type="submit">Submit</Button>
+            <Button 
+              type="submit"
+              disabled={isSubmitting}
+              className="min-w-[100px]"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                'Submit'
+              )}
+            </Button>
           </div>
         </form>
       </DialogContent>

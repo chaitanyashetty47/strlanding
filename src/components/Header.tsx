@@ -48,7 +48,7 @@ export default function Header() {
             <a href="/resources" className="hover:text-red-500">Resources</a>
             <Button 
               className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
-              onClick={() => window.open("https://calendly.com/strentor/strentor-four-wishes-program", "_blank")}
+              onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
                 Book A Call
@@ -65,7 +65,7 @@ export default function Header() {
             <a href="/resources" className="block hover:text-red-500 py-2">Resources</a>
             <Button 
               className="w-full shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
-              onClick={() => window.open("https://calendly.com/strentor/strentor-four-wishes-program", "_blank")}
+              onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
                 Book A Call

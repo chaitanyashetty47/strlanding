@@ -93,18 +93,26 @@ export default function TeamPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="space-y-16">
           {teamMembers.map((member, index) => (
-            <Card key={index} className="overflow-hidden border-none shadow-xl">
+            <Card
+              key={index}
+              id={member.name.toLowerCase().replace(/\s+/g, "")} // Generate IDs like "anishajhunjhunwala"
+              className="overflow-hidden border-none shadow-xl"
+            >
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="p-8 space-y-6 order-2 md:order-none">
                     <div>
-                      <h2 className="text-4xl font-bold text-gray-900 mb-2">{member.name}</h2>
+                      <h2 className="text-4xl font-bold text-gray-900 mb-2">
+                        {member.name}
+                      </h2>
                       <Badge className="bg-[#FFBD22] text-black text-md font-semibold">
                         {member.role}
                       </Badge>
                       <div className="mt-8 space-y-8">
                         <div>
-                          <h3 className="text-lg font-semibold text-[#0D97FF] mb-4">Qualifications</h3>
+                          <h3 className="text-lg font-semibold text-[#0D97FF] mb-4">
+                            Qualifications
+                          </h3>
                           <ul className="space-y-3 text-gray-700 font-bold">
                             {member.qualifications.map((qual, idx) => (
                               <li key={idx} className="flex items-start">
@@ -115,7 +123,9 @@ export default function TeamPage() {
                           </ul>
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-[#00D115] mb-4">What We Offer</h3>
+                          <h3 className="text-lg font-semibold text-[#00D115] mb-4">
+                            What We Offer
+                          </h3>
                           <ul className="space-y-3 text-gray-700 font-bold">
                             {member.offerings.map((offer, idx) => (
                               <li key={idx} className="flex items-start">
@@ -129,7 +139,12 @@ export default function TeamPage() {
                       <div className="mt-8">
                         <Button
                           className="bg-[#F31818] hover:bg-[#F31818]/90 text-lg font-bold text-white rounded-full px-8 py-6"
-                          onClick={() => window.open("https://calendly.com/strentor/strentor-four-wishes-program", "_blank")}
+                          onClick={() =>
+                            window.open(
+                              "https://calendly.com/strentor/strentor-four-wishes-program",
+                              "_blank"
+                            )
+                          }
                         >
                           Schedule a Session
                         </Button>
@@ -149,38 +164,8 @@ export default function TeamPage() {
             </Card>
           ))}
         </div>
-
-        <div className="mt-24 mb-16 bg-white rounded-2xl shadow-xl p-12">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Why Choose <span className="text-[#F31818]">STRENTOR</span>?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Personalized Approach",
-                description: "Tailored programs designed for your unique journey",
-                icon: <Check className="text-[#00D115] w-8 h-8" />,
-              },
-              {
-                title: "Expert Guidance",
-                description: "Learn from certified professionals with proven track records",
-                icon: <Star className="text-[#FFBD22] w-8 h-8" />,
-              },
-              {
-                title: "Holistic Growth",
-                description: "Comprehensive development of mind, body, and spirit",
-                icon: <Star className="text-[#0D97FF] w-8 h-8" />,
-              },
-            ].map((item, index) => (
-              <div key={index} className="text-center p-6 rounded-xl bg-gray-50">
-                <div className="mb-4 flex justify-center">{item.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
+
       <div className="text-center mb-16 py-20 bg-gradient-to-br from-blue-600/20 via-purple-500/20 to-pink-500/20">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 ">
             Ready to Begin Your <span className="text-[#F31818]">Journey</span>?
