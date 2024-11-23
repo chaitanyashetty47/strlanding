@@ -38,7 +38,19 @@ const Testimonials = () => {
     {
       quote: "I gained a lot of confidence and clarity in my fitness journey thanks to Aditya's personalized guidance.",
       author: "Rahul Sharma"
+    },
+    {
+      quote: "If you have dreams but haven't started or feel stuck, Arun Kunjunny is the coach to approach. I am grateful for his help in overcoming personal & professional challenges and discovering my inner strengths, boosting my self-belief.",
+      author: "Sirisha Kantety"
+    },
+    {
+      quote: "Sessions with Ashmita are highly recommended for anyone seeking direction or inner peace. Her personal growth journey allows her to connect deeply, offering both desired and needed insights, rated 10/10, these sessions are a must try for all.",
+      author: "Bhargav Shah"
+    },{
+      quote: "Anisha, my long-time psychologist, helps me manage the mental & emotional challenges of living with the physical challenge. She understands my struggles, offers empathetic support, and provides solutions that bring me peace and foster personal growth.",
+      author: "Aditya Mandan"
     }
+
   ];
 
   const [position, setPosition] = useState(0);
