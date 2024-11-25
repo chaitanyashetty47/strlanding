@@ -1,4 +1,4 @@
-import { IntroCard } from '@/components/IntroCard';
+import { IntroCard } from '@/components/landing/intro/IntroCard';
 
 type Feature = {
   icon: 'holistic' | 'inclusivity' | 'empowerment' | 'community';

@@ -4,12 +4,41 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { Star, Check } from 'lucide-react'
-import Header from '@/components/Header';
-import Footer from "@/components/Footer"
+import Header from '@/components/landing/Header';
+import Footer from "@/components/landing/Footer"
 
 export default function TeamPage() {
   const teamMembers = [
     {
+      name: "Aditya Mandan",
+      role: "Fitness and Nutrition Coaching",
+      image: "/Aditya.jpg",
+      qualifications: [
+        "National-level Para Powerlifter",
+        "Certified Fitness Trainer (Level 2, PEPT) and Nutrition Consultant",
+      ],
+      offerings: [
+        "Tailored Fitness Programs: From fat loss to powerlifting",
+        "Holistic Transformation: Integrating physical, mental, and emotional well-being",
+        "Inclusive Approach: Accessible and empowering fitness for everyone",
+      ],
+    },
+    {
+      name: "Ashmita Dani",
+      role: "Manifestation and Energy Coaching",
+      image: "/Ashmita.jpg",
+      qualifications: [
+        "In-depth research into energy science and quantum physics",
+        "Expertise in merging spirituality with scientific methods",
+      ],
+      offerings: [
+        "Manifesting Mojo Sessions: 1:1 coaching to shift energy and align with goals",
+        "Mindset and Energy Work: Address blockages to unlock transformation",
+        "Practical and Personalized: Data-backed strategies with spiritual insights",
+      ],
+    },
+    {
+
       name: "Anisha Jhunjhunwala",
       role: "Emotional Wellness and Therapy",
       image: "/Anisha.jpeg",
@@ -39,34 +68,8 @@ export default function TeamPage() {
         "Safe Space: Encouraging open dialogue for lasting personal growth",
       ],
     },
-    {
-      name: "Ashmita Dani",
-      role: "Manifestation and Energy Coaching",
-      image: "/Ashmita.jpg",
-      qualifications: [
-        "In-depth research into energy science and quantum physics",
-        "Expertise in merging spirituality with scientific methods",
-      ],
-      offerings: [
-        "Manifesting Mojo Sessions: 1:1 coaching to shift energy and align with goals",
-        "Mindset and Energy Work: Address blockages to unlock transformation",
-        "Practical and Personalized: Data-backed strategies with spiritual insights",
-      ],
-    },
-    {
-      name: "Aditya Mandan",
-      role: "Fitness and Nutrition Coaching",
-      image: "/Aditya.jpg",
-      qualifications: [
-        "National-level Para Powerlifter",
-        "Certified Fitness Trainer (Level 2, PEPT) and Nutrition Consultant",
-      ],
-      offerings: [
-        "Tailored Fitness Programs: From fat loss to powerlifting",
-        "Holistic Transformation: Integrating physical, mental, and emotional well-being",
-        "Inclusive Approach: Accessible and empowering fitness for everyone",
-      ],
-    },
+    
+    
   ]
 
   return (
@@ -141,12 +144,12 @@ export default function TeamPage() {
                           className="bg-[#F31818] hover:bg-[#F31818]/90 text-lg font-bold text-white rounded-full px-8 py-6"
                           onClick={() =>
                             window.open(
-                              "https://calendly.com/strentor/strentor-four-wishes-program",
+                              "https://calendly.com/strentor/strentor-services",
                               "_blank"
                             )
                           }
                         >
-                          Schedule a Session
+                          Book A Discovery Call
                         </Button>
                       </div>
                     </div>
@@ -175,7 +178,7 @@ export default function TeamPage() {
           </p>
           <Button 
             className="bg-[#F31818] hover:bg-[#F31818]/90 text-white font-bold rounded-full px-8 py-6 text-lg"
-            onClick={() => window.open("https://calendly.com/strentor/strentor-four-wishes-program", "_blank")}
+            onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
           >
             Start Your Transformation
           </Button>

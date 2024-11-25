@@ -1,12 +1,12 @@
-import Banner from "@/components/Banner";
-import FAQSection from "@/components/FAQSection";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Team from "@/components/Team";
-import Testimonials from "@/components/Testimonials";
-import Footer from "@/components/Footer";
-import ProgramsCard from "@/components/Programs";
-import Introduction from "@/components/Introduction";
+import Banner from "@/components/landing/Banner";
+import FAQSection from "@/components/landing/FAQSection";
+import Header from "@/components/landing/Header";
+import Hero from "@/components/landing/Hero";
+import Team from "@/components/landing/Team";
+import Testimonials from "@/components/landing/Testimonials";
+import Footer from "@/components/landing/Footer";
+import ProgramsCard from "@/components/landing/Programs";
+import Introduction from "@/components/landing/Introduction";
 
 
 export default function Home() {

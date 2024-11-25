@@ -18,7 +18,7 @@ export default function Hero() {
   }
 
   const handleBookCall = () => {
-    window.open("https://calendly.com/strentor/strentor-four-wishes-program", "_blank")
+    window.open("https://calendly.com/strentor/strentor-services", "_blank")
   }
 
   return (
@@ -49,7 +49,7 @@ export default function Hero() {
                   onClick={handleBookCall}
                   className="h-14 px-8 text-lg rounded-full bg-white border-2 border-[#0D97FF] text-[#0D97FF] hover:bg-[#0D97FF] hover:text-white transition-all transform hover:scale-105"
                 >
-                  Book a Call
+                  Book A Discovery Call
                 </Button>
               </div>
             </div>

@@ -1,6 +1,6 @@
 "use client"
-import { IntroHeader } from '@/components/IntroHeader'
-import { IntroContent } from './IntroContent'
+import { IntroHeader } from '@/components/landing/intro/IntroHeader'
+import { IntroContent } from '@/components/landing/intro/IntroContent'
 
 export default function Introduction() {
   return (

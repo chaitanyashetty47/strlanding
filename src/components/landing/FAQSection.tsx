@@ -10,8 +10,23 @@ import {
 const FAQSection = () => {
   const faqs = [
     {
-      question: "What is STRENTOR, and what does it stand for?",
-      answer: "STRENTOR is a holistic empowerment brand dedicated to helping individuals discover their inner strength and achieve their full potential. Our name symbolizes strength and resilience, embodying our mission to break barriers and promote personal growth through fitness training, psychological support, life coaching, and manifestation guidance."
+      question: "What is STRENTOR, and what are your core values?",
+      answer: (
+        <div className="space-y-4">
+          <p>
+            STRENTOR is a holistic empowerment brand dedicated to helping individuals discover their inner strength and achieve their full potential. Our name symbolizes strength and resilience, embodying our mission to break barriers and promote personal growth through fitness training, psychological support, life coaching, and manifestation guidance.
+          </p>
+          <div>
+            <p>Our brand is built on four key values:</p>
+            <ul className="list-disc pl-6 space-y-1 mt-2">
+              <li>Resilience: Empowering individuals to overcome challenges</li>
+              <li>Empowerment: Helping clients discover and harness their inner strength</li>
+              <li>Inclusivity: Creating accessible and tailored solutions for all</li>
+              <li>Transformation: Driving meaningful personal growth and change</li>
+            </ul>
+          </div>
+        </div>
+      )
     },
     {
       question: "What services does STRENTOR offer?",
@@ -66,20 +81,6 @@ const FAQSection = () => {
     {
       question: "Do you offer community support or group programs?",
       answer: "Yes, we believe in the power of community. Join our online groups to connect with others on similar journeys, share progress, and access exclusive content. We also host workshops, webinars, and live sessions to foster a sense of belonging and mutual support."
-    },
-    {
-      question: "What are your core values?",
-      answer: (
-        <div className="space-y-2">
-          <p>STRENTOR is built on four key values:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Resilience: Empowering individuals to overcome challenges</li>
-            <li>Empowerment: Helping clients discover and harness their inner strength</li>
-            <li>Inclusivity: Creating accessible and tailored solutions for all</li>
-            <li>Transformation: Driving meaningful personal growth and change</li>
-          </ul>
-        </div>
-      )
     },
     {
       question: "How do you ensure the quality of your services?",

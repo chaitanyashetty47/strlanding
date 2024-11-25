@@ -24,7 +24,7 @@ export function BrandStory() {
         </div>
         <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
           <Image
-            src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2069"
+            src="/transformation.png"
             alt="Empowerment in action"
             fill
             className="object-cover"

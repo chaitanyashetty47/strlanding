@@ -11,14 +11,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
-  // const handleJoinNowClick = () => {
-  //   setShowForm(true);
-  //   setIsMenuOpen(false); // Close mobile menu when opening form
-  // };
 
   return (
     <>
-      <header className="container mx-auto px-4 border-b shadow-xl">
+      <header className="container mx-auto px-4 border-b shadow-sm">
         <div className="flex items-center justify-between py-3 md:py-3">
           
           <div>
@@ -43,15 +39,15 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-5 items-center font-semibold">
+          <a href="/" className="hover:text-red-500">Home</a>
             <a href="/aboutus" className="hover:text-red-500">About Us</a>
             <a href="/programs" className="hover:text-red-500">Programs</a>
-            <a href="/resources" className="hover:text-red-500">Resources</a>
             <Button 
               className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
               onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
-                Book A Call
+              Book A Discovery Call
               </span>
             </Button>
           </div>
@@ -68,7 +64,7 @@ export default function Header() {
               onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
-                Book A Call
+                Book A Discovery Call
               </span>
             </Button>
           </div>
