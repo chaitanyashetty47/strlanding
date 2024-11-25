@@ -55,10 +55,10 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t">
+          <div className="md:hidden py-4 space-y-4 border-t flex flex-col items-center font-semibold ">
+            <a href="/" className="block hover:text-red-500 py-2">Home</a>
             <a href="/aboutus" className="block hover:text-red-500 py-2">About Us</a>
-            <a href="/programs" className="block hover:text-red-500 py-2">Programs</a>
-            <a href="/resources" className="block hover:text-red-500 py-2">Resources</a>
+            <a href="/programs" className="block hover:text-red-500 py-2">Programs</a>           
             <Button 
               className="w-full shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
               onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
