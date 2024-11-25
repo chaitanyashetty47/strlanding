@@ -34,10 +34,10 @@ const FAQSection = () => {
         <div className="space-y-2">
           <p>We provide a comprehensive suite of services, including:</p>
           <ul className="list-disc pl-6 space-y-1">
-            <li>Fitness Training: Tailored programs to enhance physical health and fitness</li>
-            <li>Psychological Support: Access to mental health professionals and resources for emotional well-being</li>
-            <li>Life Coaching: Guidance to help individuals achieve personal and professional goals</li>
-            <li>Manifestation Guidance: Techniques and practices to help manifest desired outcomes and enhance mindset</li>
+            <li><b>Fitness Training:</b> Tailored programs to enhance physical health and fitness</li>
+            <li><b>Psychological Support:</b> Access to mental health professionals and resources for emotional well-being</li>
+            <li><b>Life Coaching:</b> Guidance to help individuals achieve personal and professional goals</li>
+            <li><b>Manifestation Guidance:</b> Techniques and practices to help manifest desired outcomes and enhance mindset</li>
           </ul>
           <p>Our holistic approach ensures that your physical, mental, and emotional well-being are addressed collectively.</p>
         </div>
@@ -61,7 +61,18 @@ const FAQSection = () => {
     },
     {
       question: "Do you offer virtual services?",
-      answer: "Yes, all our services are accessible virtually, ensuring you can benefit from STRENTOR's expertise no matter where you are. From virtual fitness sessions to online life coaching and manifestation workshops, we make holistic empowerment convenient for everyone."
+      answer: (
+        <div className="space-y-2">
+          <p>Yes, all our services are available virtually, including:</p>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><b>Fitness training</b></li>
+            <li><b>Manifestation Guidance</b></li>
+            <li><b>Psychological Support</b></li>
+            <li><b>Life Coaching</b></li>
+          </ul>
+          <p>The results depend on your commitment, but we&apos;re here to support you every step of the way!</p>
+        </div>
+      )
     },
     {
       question: "What results can I expect from your programs?",
@@ -69,10 +80,10 @@ const FAQSection = () => {
         <div className="space-y-2">
           <p>Our programs are designed to help you:</p>
           <ul className="list-disc pl-6 space-y-1">
-            <li>Improve physical health and fitness</li>
-            <li>Enhance mental clarity and emotional stability</li>
-            <li>Achieve personal and professional goals</li>
-            <li>Cultivate a positive and empowered mindset</li>
+            <li><b>Improve physical health and fitness</b></li>
+            <li><b>Enhance mental clarity and emotional stability</b></li>
+            <li><b>Achieve personal and professional goals</b></li>
+            <li><b>Cultivate a positive and empowered mindset</b></li>
           </ul>
           <p>The results depend on your commitment, but we&apos;re here to support you every step of the way!</p>
         </div>

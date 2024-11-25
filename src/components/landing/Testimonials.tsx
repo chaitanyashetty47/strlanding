@@ -38,11 +38,6 @@ export default function Testimonials() {
   const testimonials = [
     {
       quote:
-        "Aditya has been helping me with my diet and exercise routine for past 8 months and I couldn't be happier.",
-      author: "Kunjan Chabra",
-    },
-    {
-      quote:
         "Aditya is a brilliant trainer. He pushed me when it was needed and cherished every fitness milestone that I achieved.",
       author: "Tanushree Das",
     },
