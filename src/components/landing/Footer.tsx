@@ -19,13 +19,13 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Logo Section */}
-        <div className="flex flex-col items-center justify-center space-y-2">
-          <div className="font-bold">Strentor © 2024</div>
+        {/* Center Section */}
+        <div className="flex items-center justify-center font-bold">
+          Strentor © 2024
         </div>
 
         {/* Stay Connected Section */}
-        <div className="space-y-4">
+        <div className="space-y-4 justify-self-end">
           <h3 className="text-lg font-semibold">Stay Connected</h3>
           <div className="flex justify-center sm:justify-start gap-4 text-gray-500 dark:text-gray-400">
             <Link
@@ -36,6 +36,7 @@ export default function Footer() {
             >
               <Facebook className="h-5 w-5" />
             </Link>
+
             <Link
               className="hover:text-[#F31818] dark:hover:text-gray-100"
               href="https://in.linkedin.com/company/strentor"
@@ -44,6 +45,7 @@ export default function Footer() {
             >
               <Linkedin className="h-5 w-5" />
             </Link>
+
             <Link
               className="hover:text-[#F31818] dark:hover:text-gray-100"
               href="https://www.instagram.com/strentor/"
@@ -52,6 +54,7 @@ export default function Footer() {
             >
               <Instagram className="h-5 w-5" />
             </Link>
+
             <Link
               className="hover:text-[#F31818] dark:hover:text-gray-100"
               href="https://www.youtube.com/@STRENTOR"
@@ -63,6 +66,18 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Additional Styles for Mobile */}
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+        }
+      `}</style>
     </footer>
   );
 }
