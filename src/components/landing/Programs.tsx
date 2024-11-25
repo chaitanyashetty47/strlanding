@@ -14,7 +14,7 @@ const ProgramsCard = () => {
       gradient: "from-blue-500 to-purple-500",
     },
     {
-      icon: "/mani-white.png",
+      icon: "/manifestation.png",
       title: "Manifestation Guidance",
       description:
         "Discover your purpose and create a powerful personal manifestation for success",
@@ -61,12 +61,16 @@ const ProgramsCard = () => {
                   <div
                     className={`mb-6 rounded-full bg-gradient-to-r ${program.gradient} transform group-hover:scale-110 transition-transform duration-300 w-16 h-16 flex items-center justify-center`}
                   >
-                    <div className="relative w-10 h-10">
+                      <div
+                      className={`relative ${
+                        program.icon === "/manifestation.png" ? "w-11 h-14 " : "w-10 h-10"
+                      }`}
+                    >
                       <Image
                         src={program.icon}
                         alt={program.title}
                         fill
-                        sizes="32px"
+                        sizes={program.icon === "/manifestation.png" ? "56px" : "32px"}
                         className="object-contain"
                         priority={index < 2}
                       />
