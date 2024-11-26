@@ -159,7 +159,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
                   align="start"
                   sideOffset={5}
                 >
-                  <div className="sticky top-0 z-50 bg-white p-2 border-b shadow-sm">
+                 <div className="sticky top-0 z-50 bg-white p-2 border-b shadow-sm hidden sm:block"> 
                     <div className="flex items-center px-2 py-1 border rounded-md">
                       <Search className="w-4 h-4 mr-2 text-gray-400" />
                       <input
@@ -173,7 +173,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
                         autoCapitalize="off" // Disable auto-capitalization
                       />
                     </div>
-                  </div>
+                 </div>
                   <div className="pt-2 overflow-y-auto">
                     {filteredCountries.length > 0 ? (
                       filteredCountries.map((country) => (
