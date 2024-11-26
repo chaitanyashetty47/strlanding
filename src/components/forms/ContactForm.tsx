@@ -163,10 +163,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
                     <div className="flex items-center px-2 py-1 border rounded-md">
                       <Search className="w-4 h-4 mr-2 text-gray-400" />
                       <input
+                        type="search"
                         className="w-full border-none outline-none bg-transparent placeholder:text-gray-400"
                         placeholder="Search countries..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
+                        autoComplete="off"  // Prevent autocomplete
+                        autoCorrect="off"   // Disable autocorrect
+                        autoCapitalize="off" // Disable auto-capitalization
                       />
                     </div>
                   </div>
