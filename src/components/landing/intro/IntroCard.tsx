@@ -8,7 +8,7 @@ interface IntroCardProps {
 }
 
 const iconPaths: Record<IntroCardProps['icon'], string> = {
-  holistic: '/icons/community.png',
+  holistic: '/icons/holistic.png',
   inclusivity: '/icons/inclusitivity.png',
   empowerment: '/icons/confidence.png',
   community: '/icons/community.png',
