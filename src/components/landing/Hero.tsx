@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import { useState } from "react"
 import { ContactForm } from "@/components/forms/ContactForm"
+import { WaitlistForm } from "../forms/WaitlistForm"
 
 export default function Hero() {
   const [showForm, setShowForm] = useState(false)
+  const [showWaitlist, setShowWaitlist] = useState(false)
 
   const guarantees = [
     "90 day satisfaction guarantee",
@@ -17,9 +19,11 @@ export default function Hero() {
     setShowForm(true)
   }
 
-  const handleBookCall = () => {
-    window.open("https://calendly.com/strentor/strentor-services", "_blank")
+  const handleWaitlistClick = () => {
+    setShowWaitlist(true)
   }
+
+
 
   return (
     <>
@@ -46,10 +50,10 @@ export default function Hero() {
                   Start Your Journey
                 </Button>
                 <Button 
-                  onClick={handleBookCall}
+                  onClick={handleWaitlistClick}
                   className="h-14 px-8 text-lg rounded-full bg-white border-2 border-[#0D97FF] text-[#0D97FF] hover:bg-[#0D97FF] hover:text-white transition-all transform hover:scale-105"
                 >
-                  Book A Discovery Call
+                  Join Our Waitlist
                 </Button>
               </div>
             </div>
@@ -88,6 +92,7 @@ export default function Hero() {
       </div>
 
       <ContactForm open={showForm} onOpenChange={setShowForm} />
+      <WaitlistForm open={showWaitlist} onOpenChange={setShowWaitlist}/>
     </>
   )
 }

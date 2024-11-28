@@ -36,7 +36,7 @@ interface ContactFormProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const serviceOptions = ["Fitness", "Psychological", "Life Coaching", "Manifestation"];
+const serviceOptions = ["Fitness Training", "Manifestation Guidance", "Psychological Support", "Life Coaching"];
 
 const initialFormData: FormData = {
   name: "",
@@ -54,6 +54,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
   const [filteredCountries, setFilteredCountries] = useState(countriesData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<{
+    email?: string;
+    contactNumber?: string;
+  }>({});
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -66,9 +70,29 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
     return () => clearTimeout(timeout);
   }, [searchQuery]);
 
+  const validateEmail = (email: string) => {
+    // Basic email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhoneNumber = (phoneNumber: string) => {
+    // Validate that phone number contains only digits
+    const phoneRegex = /^\d+$/;
+    return phoneRegex.test(phoneNumber);
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // Clear validation errors when user starts typing
+    if (name === 'email' || name === 'contactNumber') {
+      setValidationErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }));
+    }
   };
 
   const handleSelectChange = (name: string, value: string) => {
@@ -90,6 +114,28 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Reset previous validation errors
+    setValidationErrors({});
+
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      setValidationErrors(prev => ({
+        ...prev,
+        email: "Please enter a valid email address"
+      }));
+      return;
+    }
+
+    // Validate phone number
+    if (!validatePhoneNumber(formData.contactNumber)) {
+      setValidationErrors(prev => ({
+        ...prev,
+        contactNumber: "Please enter a valid numeric phone number"
+      }));
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -114,7 +160,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
     }
   };
 
-  const clearForm = () => setFormData(initialFormData);
+  const clearForm = () => {
+    setFormData(initialFormData);
+    setSearchQuery(""); // Reset search query
+    setFilteredCountries(countriesData); 
+    setValidationErrors({});
+  };
 
   return (
     <>
@@ -124,22 +175,31 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
             <DialogTitle className="text-center">Contact Details</DialogTitle>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Rest of the form content remains the same */}
+            {/* Name, Surname, and Email fields */}
             {["name", "surname", "email"].map((field) => (
-              <div key={field} className="flex items-center gap-4">
-                <Label htmlFor={field} className="w-1/3 capitalize">
-                  {field}
-                </Label>
-                <Input
-                  id={field}
-                  name={field}
-                  required
-                  value={formData[field as keyof FormData] as string}
-                  onChange={handleInputChange}
-                />
+              <div key={field} className="flex flex-col gap-2">
+                <div className="flex items-center gap-4">
+                  <Label htmlFor={field} className="w-1/3 capitalize">
+                    {field}
+                  </Label>
+                  <Input
+                    id={field}
+                    name={field}
+                    required
+                    value={formData[field as keyof FormData] as string}
+                    onChange={handleInputChange}
+                    type={field === 'email' ? 'email' : 'text'}
+                  />
+                </div>
+                {field === 'email' && validationErrors.email && (
+                  <p className="text-red-500 text-sm ml-[33.33%]">
+                    {validationErrors.email}
+                  </p>
+                )}
               </div>
             ))}
 
+            {/* Country selection remains the same */}
             <div className="flex items-center gap-4">
               <Label htmlFor="country" className="w-1/3">
                 Country
@@ -168,9 +228,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
                         placeholder="Search countries..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        autoComplete="off"  // Prevent autocomplete
-                        autoCorrect="off"   // Disable autocorrect
-                        autoCapitalize="off" // Disable auto-capitalization
+                        autoComplete="off"
+                        autoCorrect="off"
+                        autoCapitalize="off"
                       />
                     </div>
                  </div>
@@ -189,39 +249,48 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
               </Select>
             </div>
 
-            <div className="flex items-center gap-4">
-              <Label htmlFor="contactNumber" className="w-1/3">
-                Mobile No.
-              </Label>
-              <div className="flex space-x-2">
-                <Select
-                  name="dialCode"
-                  value={formData.dialCode}
-                  onValueChange={(value) => handleSelectChange("dialCode", value)}
-                >
-                  <SelectTrigger className="w-24">
-                    <SelectValue placeholder="Code" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {countriesData.map((country) => (
-                      <SelectItem key={country.code} value={country.dial_code}>
-                        {country.emoji} {country.dial_code}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <Input
-                  id="contactNumber"
-                  name="contactNumber"
-                  type="tel"
-                  required
-                  value={formData.contactNumber}
-                  onChange={handleInputChange}
-                  className="flex-1"
-                />
+            {/* Contact Number with validation */}
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-4">
+                <Label htmlFor="contactNumber" className="w-1/3">
+                  Mobile No.
+                </Label>
+                <div className="flex space-x-2 flex-1">
+                  <Select
+                    name="dialCode"
+                    value={formData.dialCode}
+                    onValueChange={(value) => handleSelectChange("dialCode", value)}
+                  >
+                    <SelectTrigger className="w-24">
+                      <SelectValue placeholder="Code" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {countriesData.map((country) => (
+                        <SelectItem key={country.code} value={country.dial_code}>
+                          {country.emoji} {country.dial_code}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Input
+                    id="contactNumber"
+                    name="contactNumber"
+                    type="tel"
+                    required
+                    value={formData.contactNumber}
+                    onChange={handleInputChange}
+                    className="flex-1"
+                  />
+                </div>
               </div>
+              {validationErrors.contactNumber && (
+                <p className="text-red-500 text-sm ml-[33.33%]">
+                  {validationErrors.contactNumber}
+                </p>
+              )}
             </div>
 
+            {/* Services Interested remains the same */}
             <div>
               <Label className="block font-medium text-gray-700">Services Interested</Label>
               <div className="flex flex-col gap-2 mt-2">
@@ -239,6 +308,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
               </div>
             </div>
 
+            {/* Buttons remain the same */}
             <div className="flex justify-end space-x-4">
               <Button 
                 type="button" 
@@ -276,7 +346,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
         </DialogContent>
       </Dialog>
 
-      {/* Success Dialog */}
+      {/* Success Dialog remains the same */}
       <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
         <DialogContent className="max-w-md">
           <DialogHeader>
@@ -284,7 +354,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
           </DialogHeader>
           <p className="text-center py-4">We Will Reach Out To You Soon!</p>
           <div className="flex justify-end">
-            <Button className = "bg-[#F31818]" onClick={() => setShowSuccessDialog(false)}>
+            <Button className="bg-[#F31818]" onClick={() => setShowSuccessDialog(false)}>
               Close
             </Button>
           </div>
