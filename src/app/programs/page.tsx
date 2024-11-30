@@ -77,7 +77,7 @@ export default function TeamPage() {
       <Header/>
       <div className="relative h-[40vh] bg-black mb-16">
         <Image
-          src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070"
+          src="https://images.unsplash.com/photo-1593810450967-f9c42742e326?q=80&w=2070"
           alt="Team collaboration"
           fill
           className="object-cover opacity-30"

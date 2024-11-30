@@ -16,6 +16,9 @@ export default function Footer() {
             <li className="hover:text-[#F31818]">
               <Link href="/programs">Programs</Link>
             </li>
+            <li className="hover:text-[#F31818]">
+              <Link href="/community">Community</Link>
+            </li>
           </ul>
         </div>
 

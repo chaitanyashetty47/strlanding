@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 import { ContactForm } from "@/components/forms/ContactForm"
 import { WaitlistForm } from "../forms/WaitlistForm"
 
@@ -59,7 +60,7 @@ export default function Hero() {
             </div>
 
             {/* Video Section */}
-            <div className="flex justify-center items-center">
+            {/* <div className="flex justify-center items-center">
               <div className="w-full aspect-video rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all">
                 <iframe
                   src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -67,6 +68,17 @@ export default function Hero() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="w-full h-full"
+                />
+              </div>
+            </div> */}
+            <div className="flex justify-center items-center">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all">
+                <Image
+                  src="/hero.png"
+                  alt="Holistic transformation and wellness"
+                  fill
+                  className="object-cover"
+                  priority
                 />
               </div>
             </div>
