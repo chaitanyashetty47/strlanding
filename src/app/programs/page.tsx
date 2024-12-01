@@ -111,7 +111,7 @@ export default function TeamPage() {
                       <Badge className="bg-[#FFBD22] text-black text-md font-semibold">
                         {member.role}
                       </Badge>
-                      <div className="mt-8 space-y-8">
+                      <div className="mt-8 space-y-20">
                         <div>
                           <h3 className="text-lg font-semibold text-[#0D97FF] mb-4">
                             Qualifications
@@ -139,7 +139,7 @@ export default function TeamPage() {
                           </ul>
                         </div>
                       </div>
-                      <div className="mt-8">
+                      {/* <div className="mt-8">
                         <Button
                           className="bg-[#F31818] hover:bg-[#F31818]/90 text-lg font-bold text-white rounded-full px-8 py-6"
                           onClick={() =>
@@ -151,7 +151,7 @@ export default function TeamPage() {
                         >
                           Book A Discovery Call
                         </Button>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="relative h-[600px] bg-gray-100 order-1 md:order-none">

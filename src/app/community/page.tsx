@@ -10,24 +10,24 @@ const communityGroups = [
     title: "STRENTOR Main Community",
     description: "Your hub for general updates, announcements, and discussions across all services.",
     icon: "/strentorfav.png",
-    color: "from-[#F31818]/10 to-[#F31818]/5",
-    buttonColor: "bg-[#F31818] hover:bg-[#F31818]/90",
+    color: "from-[#ffde21]/10 to-[#ffde21]/5",
+    buttonColor: "bg-[#ffde21] hover:bg-[#ffde21]/90",
     whatsappLink: "https://chat.whatsapp.com/GJRdI9y1NRkFei0IosUAlL"
   },
   {
     title: "Fitness Group",
     description: "For those focused on physical health and fitness, this group shares workouts, fitness tips, and motivational content.",
     icon: "/fitness.svg",
-    color: "from-[#00D115]/10 to-[#00D115]/5",
-    buttonColor: "bg-[#00D115] hover:bg-[#00D115]/90",
+    color: "from-[#F31818]/10 to-[#F31818]/5",
+    buttonColor: "bg-[#F31818] hover:bg-[#F31818]/90",
     whatsappLink: "https://chat.whatsapp.com/EYr2NBxdcPoFKoj3TFmKQr"
   },
   {
     title: "Manifestation Guidance Group",
     description: "Explore techniques, tools, and stories to help you manifest your dreams and cultivate positivity.",
     icon: "/manifestation.png",
-    color: "from-[#0D97FF]/10 to-[#0D97FF]/5",
-    buttonColor: "bg-[#0D97FF] hover:bg-[#0D97FF]/90",
+    color: "from-[#FFA500]/10 to-[#FFA500]/5",
+    buttonColor: "bg-[#FFA500] hover:bg-[#FFA500]/90",
     
     whatsappLink: "https://chat.whatsapp.com/ExgtHr6bvmD3Ktq7ILuXQd"
   },
@@ -35,16 +35,16 @@ const communityGroups = [
     title: "Psychological Support Group",
     description: "A safe space to discuss mental health, share resources, and build emotional well-being.",
     icon: "/brains.svg",
-    color: "from-[#FFBD22]/10 to-[#FFBD22]/5",
-    buttonColor: "bg-[#FFBD22] hover:bg-[#FFBD22]/90",
+    color: "from-[#0D97FF]/10 to-[#0D97FF]/5",
+    buttonColor: "bg-[#0D97FF] hover:bg-[#0D97FF]/90",
     whatsappLink: "https://chat.whatsapp.com/Lwxyq6gXujrL0ICb2shVkW"
   },
   {
     title: "Life Coaching Group",
     description: "Focused on personal growth, goal-setting, and achieving your full potential.",
     icon: "/lifecoaching.png",
-    color: "from-[#F31818]/10 to-[#F31818]/5",
-    buttonColor: "bg-[#F31818] hover:bg-[#F31818]/90",
+    color: "from-[#00D115]/10 to-[#00D115]/5",
+    buttonColor: "bg-[#00D115] hover:bg-[#00D115]/90",
     whatsappLink: "https://chat.whatsapp.com/BW8s55o0pLCHCimnM0za3x"
   },
   
@@ -80,7 +80,7 @@ export default function CommunityPage() {
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             Welcome to the <span className="text-[#F31818]">STRENTOR</span> Community!
           </h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-lg text-gray-900 font-semibold leading-relaxed">
             We are excited to have you join our journey of holistic empowerment and personal growth. 
             Our community is designed to inspire, support, and guide individuals through a range of 
             specialized services.
@@ -115,7 +115,7 @@ export default function CommunityPage() {
                     href={group.whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-block px-6 py-2 rounded-full text-white ${group.buttonColor} transition-colors duration-200`}
+                    className={`inline-block px-6 py-2 rounded-full text-black font-bold ${group.buttonColor} transition-colors duration-200`}
                   >
                     Join Group
                   </a>

@@ -176,7 +176,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name, Surname, and Email fields */}
-            {["name", "surname", "email"].map((field) => (
+            {["first name", "surname", "email"].map((field) => (
               <div key={field} className="flex flex-col gap-2">
                 <div className="flex items-center gap-4">
                   <Label htmlFor={field} className="w-1/3 capitalize">
@@ -292,7 +292,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
 
             {/* Services Interested remains the same */}
             <div>
-              <Label className="block font-medium text-gray-700">Services Interested</Label>
+              <Label className="block font-medium text-gray-700">Services Interested In</Label>
               <div className="flex flex-col gap-2 mt-2">
                 {serviceOptions.map((service) => (
                   <label key={service} className="flex items-center space-x-2">
