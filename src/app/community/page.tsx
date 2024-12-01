@@ -19,7 +19,7 @@ const communityGroups = [
     description: "For those focused on physical health and fitness, this group shares workouts, fitness tips, and motivational content.",
     icon: "/fitness.svg",
     color: "from-[#F31818]/10 to-[#F31818]/5",
-    buttonColor: "bg-[#F31818] hover:bg-[#F31818]/90",
+    buttonColor: "bg-[#F31818]/70 hover:bg-[#F31818]/90",
     whatsappLink: "https://chat.whatsapp.com/EYr2NBxdcPoFKoj3TFmKQr"
   },
   {
@@ -36,7 +36,7 @@ const communityGroups = [
     description: "A safe space to discuss mental health, share resources, and build emotional well-being.",
     icon: "/brains.svg",
     color: "from-[#0D97FF]/10 to-[#0D97FF]/5",
-    buttonColor: "bg-[#0D97FF] hover:bg-[#0D97FF]/90",
+    buttonColor: "bg-[#0D97FF]/65 hover:bg-[#0D97FF]/90",
     whatsappLink: "https://chat.whatsapp.com/Lwxyq6gXujrL0ICb2shVkW"
   },
   {
