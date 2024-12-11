@@ -7,6 +7,7 @@ import Testimonials from "@/components/landing/Testimonials";
 import Footer from "@/components/landing/Footer";
 import ProgramsCard from "@/components/landing/Programs";
 import Introduction from "@/components/landing/Introduction";
+import Featured from "@/components/landing/Featured";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <div>
       <Header/>
       <Hero/>
+      <Featured/>
       <Introduction/>
       <Testimonials/>
       <ProgramsCard/>

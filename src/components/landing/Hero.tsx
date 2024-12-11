@@ -46,13 +46,13 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   onClick={handleJoinNowClick}
-                  className="h-14 px-8 text-lg rounded-full bg-[#F31818] hover:bg-[#F31818]/90 transition-all transform hover:scale-105"
+                  className="h-14 px-8 text-lg rounded-full font-bold bg-[#F31818] hover:bg-[#F31818]/90 transition-all transform hover:scale-105"
                 >
                   Start Your Journey
                 </Button>
                 <Button 
                   onClick={handleWaitlistClick}
-                  className="h-14 px-8 text-lg rounded-full bg-white border-2 border-[#0D97FF] text-[#0D97FF] hover:bg-[#0D97FF] hover:text-white transition-all transform hover:scale-105"
+                  className="h-14 px-8 text-lg rounded-full font-bold bg-white border-2 border-[#0D97FF] text-[#0D97FF] hover:bg-[#0D97FF] hover:text-white transition-all transform hover:scale-105"
                 >
                   Join Our Waitlist
                 </Button>
