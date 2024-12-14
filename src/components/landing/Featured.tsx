@@ -28,39 +28,53 @@ export default function Featured() {
         Also Featured In
       </h2>
       <div className="flex flex-row space-x-9 justify-center">
-        <Logo 
+        {/* <Logo 
           src="/indiaflux.jpg" 
           alt="India Flux Logo" 
           width={400} 
           height={15} 
           href="https://indianflux.com/aditya-mandan-the-para-powerlifter-and-founder-of-stentor/" 
-        />
-        <Logo 
+        /> */}
+        {/* <Logo 
           src="/indiascoop.png" 
           alt="India Scoop Logo" 
           width={500} 
           height={48} 
           href="https://medium.com/@digitalscoopindia/aditya-mandan-the-para-powerlifter-and-founder-of-stentor-778f2bd995e1"
-        />
-        <Logo 
+        /> */}
+        {/* <Logo 
           src="/bestofhindustan.jpg" 
           alt="Best of Hindustan Logo" 
           width={600} 
           height={100} 
           href="https://bestofhindustan.com/aditya-mandan-the-para-powerlifter-and-founder-of-stentor/"
-        />
-         <Logo 
+        /> */}
+         {/* <Logo 
           src="/entbytes.jpg" 
           alt="Entrepreneur Bytes" 
           width={600} 
           height={100} 
           href="https://theentrepreneurbytes.com/aditya-mandan-the-para-powerlifter-and-founder-of-stentor/"
+        /> */}
+        <Logo 
+          src="/zeebiz.jpg" 
+          alt="Zee Business" 
+          width={300} 
+          height={300} 
+          href="https://youtu.be/yNR2nag2bxY?si=nKXvHjeBSn7vK1Ve"
+        />
+        <Logo 
+          src="/gameroom.jpg" 
+          alt="Game Room" 
+          width={600} 
+          height={600} 
+          href="https://youtu.be/jIjfj5b9kLU?si=IHWL4so_xWoH1z7l"
         />
         <Logo 
           src="/udaan.jpg" 
           alt="Radio Udaan" 
           width={600} 
-          height={100} 
+          height={600} 
           href="https://youtu.be/O0rwgzslQy0?si=WAvS4lkze0-KanjW"
         />
       </div>
