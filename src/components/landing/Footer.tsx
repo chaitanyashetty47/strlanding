@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="w-full border-t bg-black/5 backdrop-blur-lg">
       <div className="container mx-auto px-4 py-12 grid gap-8 sm:grid-cols-3 text-center sm:text-left">
-        {/* Company Section */}
+        {/* Company Sections */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Company</h3>
           <ul className="space-y-2 text-sm text-gray-800 dark:text-gray-400">
