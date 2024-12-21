@@ -8,6 +8,7 @@ import Footer from "@/components/landing/Footer";
 import ProgramsCard from "@/components/landing/Programs";
 import Introduction from "@/components/landing/Introduction";
 import Featured from "@/components/landing/Featured";
+import PopupForm from "@/components/landing/PopupForm";
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <Banner/>
       <FAQSection/>
       <Footer/>
+      <PopupForm/>
       
     </div>
     

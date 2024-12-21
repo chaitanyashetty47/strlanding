@@ -19,18 +19,18 @@ const Banner = () => {
               Join hundreds of individuals who have transformed their lives with STRENTOR
             </p>
             <div className="mx-auto max-w-sm space-y-2">
-                <Button 
+              {/* <Button 
                 className="bg-[#F31818] hover:bg-[#F31818]/90 text-white font-bold rounded-full px-8 py-6 mt-5 text-lg"
                 onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
               >
-                Start Your Journey Today
-              </Button>
-              {/* <Button
+                Book A Discovery Call
+              </Button> */}
+              <Button
                 className="w-full font-bold bg-gradient-to-r from-red-600 to-orange-600 hover:from-blue-700 hover:to-purple-700"
                 onClick={() => setShowForm(true)}
               >
-                Start Your Journey Today
-              </Button> */}
+                Start Your Goals Today
+              </Button>
               <ContactForm open={showForm} onOpenChange={setShowForm} />
             </div>
           </div>

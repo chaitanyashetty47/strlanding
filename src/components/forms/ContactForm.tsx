@@ -176,7 +176,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ open, onOpenChange }) 
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name, Surname, and Email fields */}
-            {["first name", "surname", "email"].map((field) => (
+            {["name", "surname", "email"].map((field) => (
               <div key={field} className="flex flex-col gap-2">
                 <div className="flex items-center gap-4">
                   <Label htmlFor={field} className="w-1/3 capitalize">

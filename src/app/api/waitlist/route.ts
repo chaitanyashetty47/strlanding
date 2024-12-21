@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
 
     // Prepare row data
     const row = [
-      new Date().toLocaleString('en-GB', {
+      new Date().toLocaleString('en-IN', {
         day: '2-digit',
         month: '2-digit',
         year: 'numeric',

@@ -16,13 +16,13 @@ export default function Hero() {
     "Instant Access to Our Community"
   ]
 
-  const handleJoinNowClick = () => {
-    setShowForm(true)
-  }
+  // const handleJoinNowClick = () => {
+  //   setShowForm(true)
+  // }
 
-  const handleWaitlistClick = () => {
-    setShowWaitlist(true)
-  }
+  // const handleWaitlistClick = () => {
+  //   setShowWaitlist(true)
+  // }
 
 
 
@@ -45,17 +45,26 @@ export default function Hero() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  onClick={handleJoinNowClick}
+                  onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
                   className="h-14 px-8 text-lg rounded-full font-bold bg-[#F31818] hover:bg-[#F31818]/90 transition-all transform hover:scale-105"
                 >
-                  Start Your Journey
+                  Book Your Free Discovery Call
                 </Button>
-                <Button 
+                {/* <Button 
+              className="w-3/4 shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
+              onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
+            >
+              <span className="whitespace-pre-wrap text-center text-sm font-bold
+               leading-none tracking-tight text-white lg:text-lg">
+                Book A Discovery Call
+              </span>
+            </Button> */}
+                {/* <Button 
                   onClick={handleWaitlistClick}
                   className="h-14 px-8 text-lg rounded-full font-bold bg-white border-2 border-[#0D97FF] text-[#0D97FF] hover:bg-[#0D97FF] hover:text-white transition-all transform hover:scale-105"
                 >
                   Join Our Waitlist
-                </Button>
+                </Button> */}
               </div>
             </div>
 
