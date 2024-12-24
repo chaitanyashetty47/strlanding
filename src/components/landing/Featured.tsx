@@ -17,7 +17,7 @@ export const Logo = ({ src, alt, width = 48, height = 48, href }: LogoProps) => 
     rel="noopener noreferrer"
     className="hover:opacity-80 transition-opacity"
   >
-    <Image src={src} alt={alt} width={width} height={height} className="h-12 w-auto" />
+    <Image src={src} alt={alt} width={width} height={height} className="h-24 w-auto" />
   </a>
 );
 

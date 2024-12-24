@@ -26,11 +26,12 @@ const Banner = () => {
                 Book A Discovery Call
               </Button> */}
               <Button
-                className="w-full font-bold bg-gradient-to-r from-red-600 to-orange-600 hover:from-blue-700 hover:to-purple-700"
+                className="w-full py-7 text-lg font-extrabold bg-gradient-to-r from-red-600 to-orange-600 hover:from-blue-700 hover:to-purple-700"
                 onClick={() => setShowForm(true)}
               >
                 Start Your Goals Today
               </Button>
+
               <ContactForm open={showForm} onOpenChange={setShowForm} />
             </div>
           </div>
