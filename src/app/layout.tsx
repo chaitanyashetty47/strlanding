@@ -32,7 +32,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${satoshi.className} antialiased bg-gradient-to-r from-[#FFA500]/10 via-[#D76A6A]/10 to-[#6AB9F7]/10`}>
+      <body className={`${satoshi.className} antialiased `}>
+      {/* bg-gradient-to-r from-[#FFA500]/10 via-[#D76A6A]/10 to-[#6AB9F7]/10 */}
         <main className="min-h-screen">
           {children}
         </main>

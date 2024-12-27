@@ -169,11 +169,12 @@ export default function TeamPage() {
         </div>
       </div>
 
-      <div className="text-center py-20 bg-gradient-to-br from-blue-600/20 via-purple-500/20 to-pink-500/20">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 sm:text-5xl md:text-6xl lg:text-7xl">
+      {/* <div className="text-center py-20 bg-gradient-to-br from-blue-600/20 via-purple-500/20 to-pink-500/20"> */}
+      <div className="text-center py-20 bg-gray-900">
+          <h2 className="text-4xl font-bold text-white mb-4 sm:text-5xl md:text-6xl lg:text-7xl">
             Ready to Begin Your <span className="text-[#F31818]">Journey</span>?
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto font-bold">
+          <p className="mx-auto max-w-[700px] text-gray-300 font-medium md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 pb-8 pt-2">
             Take the first step towards transformation with our expert team of coaches and mentors.
           </p>
           <Button 
@@ -182,7 +183,7 @@ export default function TeamPage() {
           >
             Start Your Transformation
           </Button>
-        </div>
+      </div>
       <Footer/>
     </div>
   )

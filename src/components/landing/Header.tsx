@@ -43,6 +43,7 @@ export default function Header() {
             <a href="/aboutus" className="hover:text-red-500">About Us</a>
             <a href="/programs" className="hover:text-red-500">Programs</a>
             <a href="/community" className="block hover:text-red-500 py-2">Community</a>
+            <a href="https://empowerment-hub.strentor.com/"  className="block hover:text-red-500 py-2">Empowerment Hub</a>     
             <Button 
               className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
               onClick={() => window.open("https://chat.whatsapp.com/BW8s55o0pLCHCimnM0za3x", "_blank")}
@@ -60,7 +61,8 @@ export default function Header() {
             <a href="/" className="block hover:text-red-500 py-2">Home</a>
             <a href="/aboutus" className="block hover:text-red-500 py-2">About Us</a>
             <a href="/programs" className="block hover:text-red-500 py-2">Programs</a>      
-            <a href="/community" className="block hover:text-red-500 py-2">Community</a>      
+            <a href="/community" className="block hover:text-red-500 py-2">Community</a>
+            <a href="https://empowerment-hub.strentor.com/"  className="block hover:text-red-500 py-2">Empowerment Hub</a>     
             {/* <Button 
               className="w-full shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
               onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
