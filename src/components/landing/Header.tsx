@@ -24,7 +24,7 @@ export default function Header() {
                 alt="Strentor Logo"
                 width={120}
                 height={240}
-                className="w-48 h-24"
+                className="w-38 h-28"
               />
             </Link>
           </div>
