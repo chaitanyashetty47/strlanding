@@ -52,7 +52,7 @@ const Banner = () => {
                 className="w-full py-7 text-lg font-extrabold bg-gradient-to-r from-red-600 to-orange-600 hover:from-blue-700 hover:to-purple-700"
                 onClick={() => setShowForm(true)}
               >
-                Start Your Goals Today
+                Start Your Journey Today
               </Button>
 
               <ContactForm open={showForm} onOpenChange={setShowForm} />
