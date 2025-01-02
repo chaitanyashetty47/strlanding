@@ -27,7 +27,7 @@ export default function Footer() {
 
         {/* Center Section */}
         <div className="flex items-center justify-center font-bold">
-          Strentor © 2024
+          Strentor © 2025
         </div>
 
         {/* Stay Connected Section */}

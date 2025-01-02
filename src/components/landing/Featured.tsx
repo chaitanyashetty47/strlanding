@@ -77,6 +77,13 @@ export default function Featured() {
           height={600} 
           href="https://youtu.be/O0rwgzslQy0?si=WAvS4lkze0-KanjW"
         />
+        <Logo 
+          src="/joshtalks.png" 
+          alt="Josh Talks" 
+          width={600} 
+          height={600} 
+          href="https://youtu.be/29PHD0uHhDY?si=AOEL30jDkwWrjnZe"
+        />
       </div>
     </div>
   );
