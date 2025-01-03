@@ -51,7 +51,8 @@ const ProgramsCard = () => {
 
         {/* Programs Cards */}
         <div className="mx-auto mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
+          {/* make md to 2 and lg to 4 later on */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 px-6">
             {programs.map((program, index) => (
               <Card
                 key={index}
