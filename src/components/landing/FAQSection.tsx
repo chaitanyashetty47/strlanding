@@ -14,15 +14,15 @@ const FAQSection = () => {
       answer: (
         <div className="space-y-4">
           <p>
-            STRENTOR is a holistic empowerment brand dedicated to helping individuals discover their inner strength and achieve their full potential. Our name symbolizes strength and resilience, embodying our mission to break barriers and promote personal growth through fitness training, psychological support, life coaching, and manifestation guidance.
+            STRENTOR is a holistic empowerment brand dedicated to helping individuals discover their inner strength and achieve their full potential. Our name symbolizes strength and resilience, embodying our mission to break barriers and promote personal growth through fitness training, psychological support and manifestation guidance.
           </p>
           <div>
             <p>Our brand is built on four key values:</p>
             <ul className="list-disc pl-6 space-y-1 mt-2">
-              <li>Resilience: Empowering individuals to overcome challenges</li>
-              <li>Empowerment: Helping clients discover and harness their inner strength</li>
-              <li>Inclusivity: Creating accessible and tailored solutions for all</li>
-              <li>Transformation: Driving meaningful personal growth and change</li>
+              <li><b>Resilience:</b> Empowering individuals to overcome challenges</li>
+              <li><b>Empowerment:</b> Helping clients discover and harness their inner strength</li>
+              <li><b>Inclusivity:</b> Creating accessible and tailored solutions for all</li>
+              <li><b>Transformation:</b> Driving meaningful personal growth and change</li>
             </ul>
           </div>
         </div>
@@ -36,7 +36,6 @@ const FAQSection = () => {
           <ul className="list-disc pl-6 space-y-1">
             <li><b>Fitness Training:</b> Tailored programs to enhance physical health and fitness</li>
             <li><b>Psychological Support:</b> Access to mental health professionals and resources for emotional well-being</li>
-            <li><b>Life Coaching:</b> Guidance to help individuals achieve personal and professional goals</li>
             <li><b>Manifestation Guidance:</b> Techniques and practices to help manifest desired outcomes and enhance mindset</li>
           </ul>
           <p>Our holistic approach ensures that your physical, mental, and emotional well-being are addressed collectively.</p>
@@ -53,7 +52,7 @@ const FAQSection = () => {
     },
     {
       question: "What makes STRENTOR different from other wellness or coaching brands?",
-      answer: "STRENTOR takes a holistic and integrated approach to empowerment, combining fitness, mental health support, life coaching, and manifestation guidance under one roof. Our emphasis on inclusivity, affordability, and personalized support sets us apart, creating a one-stop solution for overall well-being."
+      answer: "STRENTOR takes a holistic and integrated approach to empowerment, combining fitness, mental health support and manifestation guidance under one roof. Our emphasis on inclusivity, affordability, and personalized support sets us apart, creating a one-stop solution for overall well-being."
     },
     {
       question: "How can I get started with STRENTOR?",
@@ -68,7 +67,6 @@ const FAQSection = () => {
             <li><b>Fitness training</b></li>
             <li><b>Manifestation Guidance</b></li>
             <li><b>Psychological Support</b></li>
-            <li><b>Life Coaching</b></li>
           </ul>
           <p>The results depend on your commitment, but we&apos;re here to support you every step of the way!</p>
         </div>

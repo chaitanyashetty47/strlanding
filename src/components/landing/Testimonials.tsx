@@ -42,10 +42,6 @@ export default function Testimonials() {
       author: "Tanushree Das",
     },
     {
-      quote: "If you have dreams but haven't started or feel stuck, Arun Kunjunny is the coach to approach.",
-      author: "Sirisha Kantety",
-    },
-    {
       quote: "Sessions with Ashmita are highly recommended for anyone seeking direction or inner peace.",
       author: "Bhargav Shah",
     },
