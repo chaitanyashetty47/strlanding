@@ -40,14 +40,14 @@ export default function Team() {
         instagram: "https://www.instagram.com/healingwithanisha?igsh=ejZ5dnprNzJ6bXd3"
       }
     },
-    {
-      name: "Arun Kunjunny",
-      role: "Personal Transformation Architect",
-      image: "/Arun.jpg",
-      social: {
-        instagram: "https://www.instagram.com/akunjunny?igsh=MXQ3dWJhNTEzZWh6NA=="
-      }
-    }
+    // {
+    //   name: "Arun Kunjunny",
+    //   role: "Personal Transformation Architect",
+    //   image: "/Arun.jpg",
+    //   social: {
+    //     instagram: "https://www.instagram.com/akunjunny?igsh=MXQ3dWJhNTEzZWh6NA=="
+    //   }
+    // }
   ]
 
   const handleSocialClick = (e: React.MouseEvent, link: string) => {
@@ -66,7 +66,8 @@ export default function Team() {
           </p>
         </div>
         <div className="mx-auto mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+          {/* make md 2 and lg 4 when there are 4 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 px-4"> 
             {team.map((member) => (
               <Link
                 key={member.name}

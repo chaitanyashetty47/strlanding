@@ -39,14 +39,14 @@ const communityGroups = [
     buttonColor: "bg-[#0D97FF]/65 hover:bg-[#0D97FF]/90",
     whatsappLink: "https://chat.whatsapp.com/Lwxyq6gXujrL0ICb2shVkW"
   },
-  {
-    title: "Life Coaching Group",
-    description: "Focused on personal growth, goal-setting, and achieving your full potential.",
-    icon: "/lifecoaching.png",
-    color: "from-[#00D115]/10 to-[#00D115]/5",
-    buttonColor: "bg-[#00D115] hover:bg-[#00D115]/90",
-    whatsappLink: "https://chat.whatsapp.com/BW8s55o0pLCHCimnM0za3x"
-  },
+  // {
+  //   title: "Life Coaching Group",
+  //   description: "Focused on personal growth, goal-setting, and achieving your full potential.",
+  //   icon: "/lifecoaching.png",
+  //   color: "from-[#00D115]/10 to-[#00D115]/5",
+  //   buttonColor: "bg-[#00D115] hover:bg-[#00D115]/90",
+  //   whatsappLink: "https://chat.whatsapp.com/BW8s55o0pLCHCimnM0za3x"
+  // },
   
 ];
 

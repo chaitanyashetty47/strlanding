@@ -53,21 +53,21 @@ export default function TeamPage() {
         "Empowerment and Growth: Focus on self-discovery and resilience building",
       ],
     },
-    {
-      name: "Arun Kunjunny",
-      role: "NLP and Communication Coaching",
-      image: "/Arun.jpg",
-      qualifications: [
-        "Expertise in Corporate Communication, PR, Photography, Poetry, and Filmmaking",
-        "Certified NLP Practitioner and Life Coach",
-        "Skilled soft skills trainer",
-      ],
-      offerings: [
-        "Personalized Coaching: Address emotional challenges and enhance mindset",
-        "Comprehensive Transformation: Improve communication and body language",
-        "Safe Space: Encouraging open dialogue for lasting personal growth",
-      ],
-    },
+    // {
+    //   name: "Arun Kunjunny",
+    //   role: "NLP and Communication Coaching",
+    //   image: "/Arun.jpg",
+    //   qualifications: [
+    //     "Expertise in Corporate Communication, PR, Photography, Poetry, and Filmmaking",
+    //     "Certified NLP Practitioner and Life Coach",
+    //     "Skilled soft skills trainer",
+    //   ],
+    //   offerings: [
+    //     "Personalized Coaching: Address emotional challenges and enhance mindset",
+    //     "Comprehensive Transformation: Improve communication and body language",
+    //     "Safe Space: Encouraging open dialogue for lasting personal growth",
+    //   ],
+    // },
     
     
   ]
