@@ -48,7 +48,7 @@ export default function Hero() {
                   onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
                   className="h-14 px-8 text-lg rounded-full font-bold bg-[#F31818] hover:bg-[#F31818]/90 transition-all transform hover:scale-105"
                 >
-                  Book Your Free Discovery Call
+                  Book Your Discovery Call
                 </Button>
                 {/* <Button 
               className="w-3/4 shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
