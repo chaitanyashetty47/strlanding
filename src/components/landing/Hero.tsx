@@ -48,38 +48,13 @@ export default function Hero() {
                   onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
                   className="h-14 px-8 text-lg rounded-full font-bold bg-[#F31818] hover:bg-[#F31818]/90 transition-all transform hover:scale-105"
                 >
-                  Book Your Discovery Call
+                  Book Your Free Discovery Call
                 </Button>
-                {/* <Button 
-              className="w-3/4 shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
-              onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
-            >
-              <span className="whitespace-pre-wrap text-center text-sm font-bold
-               leading-none tracking-tight text-white lg:text-lg">
-                Book A Discovery Call
-              </span>
-            </Button> */}
-                {/* <Button 
-                  onClick={handleWaitlistClick}
-                  className="h-14 px-8 text-lg rounded-full font-bold bg-white border-2 border-[#0D97FF] text-[#0D97FF] hover:bg-[#0D97FF] hover:text-white transition-all transform hover:scale-105"
-                >
-                  Join Our Waitlist
-                </Button> */}
+                
               </div>
             </div>
 
             {/* Video Section */}
-            {/* <div className="flex justify-center items-center">
-              <div className="w-full aspect-video rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-            </div> */}
             <div className="flex justify-center items-center">
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all">
                 <Image
@@ -93,7 +68,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Guarantee Badges */}
           {/* Guarantee Badges */}
           <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 mt-8">
             {guarantees.map((guarantee, index) => (

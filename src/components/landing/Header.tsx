@@ -49,7 +49,7 @@ export default function Header() {
               onClick={() => window.open("https://chat.whatsapp.com/BW8s55o0pLCHCimnM0za3x", "_blank")}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-bold leading-none tracking-tight text-white lg:text-lg">
-               Book Your Discovery Call
+               Book Your Free Discovery Call
               </span>
             </Button>
           </div>
@@ -63,15 +63,7 @@ export default function Header() {
             <a href="/programs" className="block hover:text-red-500 py-2">Programs</a>      
             <a href="/community" className="block hover:text-red-500 py-2">Community</a>
             <a href="https://empowerment-hub.strentor.com/"  className="block hover:text-red-500 py-2">Empowerment Hub</a>     
-            {/* <Button 
-              className="w-full shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
-              onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
-            >
-              <span className="whitespace-pre-wrap text-center text-sm font-bold
-               leading-none tracking-tight text-white lg:text-lg">
-                Book A Discovery Call
-              </span>
-            </Button> */}
+          
           </div>
         )}
       </header>
