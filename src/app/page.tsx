@@ -9,6 +9,7 @@ import ProgramsCard from "@/components/landing/Programs";
 import Introduction from "@/components/landing/Introduction";
 import Featured from "@/components/landing/Featured";
 import PopupForm from "@/components/landing/PopupForm";
+import WhatsAppButton from "@/components/landing/WhatsAppButton";
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <FAQSection/>
       <Footer/>
       <PopupForm/>
+      <WhatsAppButton/>
       
     </div>
     
