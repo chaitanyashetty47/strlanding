@@ -49,7 +49,7 @@ export default function Header() {
               onClick={() => window.open("https://chat.whatsapp.com/BW8s55o0pLCHCimnM0za3x", "_blank")}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-bold leading-none tracking-tight text-white lg:text-lg">
-               Book Your Free Discovery Call
+               Book Your Discovery Call
               </span>
             </Button>
           </div>
