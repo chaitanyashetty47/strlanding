@@ -46,7 +46,7 @@ export default function Header() {
             <a href="https://empowerment-hub.strentor.com/"  className="block hover:text-red-500 py-2">Empowerment Hub</a>     
             <Button 
               className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
-              onClick={() => window.open("https://chat.whatsapp.com/BW8s55o0pLCHCimnM0za3x", "_blank")}
+              onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-bold leading-none tracking-tight text-white lg:text-lg">
                Book Your Discovery Call
