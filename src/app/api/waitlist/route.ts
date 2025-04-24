@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
+import { Resend } from 'resend';
+
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,7 +21,39 @@ export async function POST(request: NextRequest) {
     // Parse request body
     const body = await request.json();
 
-    // Prepare row data
+    let emailStatus = 'Not Sent'; // Default status
+
+    try {
+      // Send confirmation email to user using Resend
+      const emailResponse = await resend.emails.send({
+        from: process.env.RESEND_FROM_EMAIL!,
+        to: body.email,
+        subject: 'Welcome to Strentor!',
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2>Thank you for joining our waitlist!</h2>
+            <p>We're excited to have you on board. We'll keep you updated about:</p>
+            <ul>
+              <li>Latest product updates</li>
+              <li>Early access opportunities</li>
+              <li>Special offers</li>
+            </ul>
+            <p>Stay tuned for more information coming your way soon!</p>
+            <p><b>Best regards,</b><br>Strentor Team</p>
+          </div>
+        `,
+      });
+
+      // Update status if email sent successfully
+      if (emailResponse) {
+        emailStatus = 'Automated Email Sent';
+      }
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError);
+      emailStatus = 'Email Failed';
+    }
+
+    // Prepare row data with email status
     const row = [
       new Date().toLocaleString('en-IN', {
         day: '2-digit',
@@ -27,13 +63,14 @@ export async function POST(request: NextRequest) {
         minute: '2-digit',
         hour12: false
       }),
-      body.email
+      body.email,
+      emailStatus // Add email status as third column
     ];
 
     // Save to Google Sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID,
-      range: 'Waitlist!A:B', // Updated range to remove email status column
+      range: 'Waitlist!A:C', // Updated range to include status column
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {
@@ -42,7 +79,8 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json({
-      message: 'Form submitted successfully'
+      message: 'Form submitted successfully',
+      emailStatus
     }, { status: 200 });
 
   } catch (error) {

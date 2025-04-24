@@ -45,7 +45,7 @@ const ProgramsCard = () => {
             Our Programs
           </h2>
           <p className="max-w-[900px] text-gray-700 font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
-            Empower your journey with a range of tailored programs combining fitness training, manifestation mentoring, psychological support, and life coaching to ensure your success and transformation.
+            Empower your journey with a range of tailored programs combining fitness training, manifestation mentoring and psychological support to ensure your success and transformation.
           </p>
         </div>
 

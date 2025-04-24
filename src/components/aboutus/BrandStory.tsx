@@ -17,7 +17,7 @@ export function BrandStory() {
             </p>
             <p>
               Through our Empowerment Mosaic, we&apos;ve redefined what it means to grow 
-              stronger. By blending fitness training, psychological support, life coaching, 
+              stronger. By blending fitness training, psychological support  
               and manifestation guidance, we create a holistic approach to personal development.
             </p>
           </div>
