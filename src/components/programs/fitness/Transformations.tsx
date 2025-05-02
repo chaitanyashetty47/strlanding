@@ -23,7 +23,7 @@ const transformations: TransformationItem[] = [
   },
   {
     title: "Build Strength Beyond Limits",
-    description: "Develop Physical and Mental Resilience to Conquer Life&apos;s Toughest Challenge.",
+    description: "Develop Physical and Mental Resilience to Conquer Life's Toughest Challenge.",
     icon: Brain,
     color: "#00D115",
     lightColor: "rgba(0, 209, 21, 0.1)"
@@ -61,7 +61,7 @@ export default function Transformations() {
             Your <span className="text-[#F31818]">Journey</span> to Transformation
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Five major transformations you'll experience on your fitness journey with us.
+            Five major transformations you&apos;ll experience on your fitness journey with us.
           </p>
         </div>
 
