@@ -47,7 +47,7 @@ export default function SuccessStories() {
             Real <span className="text-[#F31818]">Transformations</span>, Real Results
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            At STRENTOR, we've already helped people achieve life-changing results. We don't promise magic - we deliver proven strategies that empower you to break through your limitations.
+            At STRENTOR, we&apos;ve already helped people achieve life-changing results. We don&apos;t promise magic - we deliver proven strategies that empower you to break through your limitations.
           </p>
         </div>
 

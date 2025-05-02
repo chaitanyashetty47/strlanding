@@ -23,7 +23,7 @@ const transformations: TransformationItem[] = [
   },
   {
     title: "Build Strength Beyond Limits",
-    description: "Develop Physical and Mental Resilience to Conquer Life's Toughest Challenge.",
+    description: "Develop Physical and Mental Resilience to Conquer Life&apos;s Toughest Challenge.",
     icon: Brain,
     color: "#00D115",
     lightColor: "rgba(0, 209, 21, 0.1)"

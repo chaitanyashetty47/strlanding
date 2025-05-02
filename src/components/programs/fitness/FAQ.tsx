@@ -23,7 +23,7 @@ const FitnessFAQ = () => {
             <li>Type-2 Diabetes</li>
             <li>Cerebral Palsy</li>
             <li>Thyroid Issues</li>
-            <li>Down's Syndrome</li>
+            <li>Down&apos;s Syndrome</li>
             <li>Spina Bifida</li>
           </ul>
           <p>Our expert trainers will design a program that considers your specific condition and limitations.</p>
