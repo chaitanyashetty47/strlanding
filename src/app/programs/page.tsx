@@ -139,19 +139,14 @@ export default function TeamPage() {
                           </ul>
                         </div>
                       </div>
-                      {/* <div className="mt-8">
+                      <div className="mt-8">
                         <Button
-                          className="bg-[#F31818] hover:bg-[#F31818]/90 text-lg font-bold text-white rounded-full px-8 py-6"
-                          onClick={() =>
-                            window.open(
-                              "https://calendly.com/strentor/strentor-services",
-                              "_blank"
-                            )
-                          }
+                          className="bg-[#F31818] hover:bg-[#F31818]/90 text-lg font-bold text-white rounded-full px-8 py-6 group"
+                          onClick={() => window.location.href = '/programs/fitness'}
                         >
-                          Book A Discovery Call
+                          Find Out More <span className="group-hover:translate-x-1 transition-transform inline-block ml-1">→</span>
                         </Button>
-                      </div> */}
+                      </div>
                     </div>
                   </div>
                   <div className="relative h-[600px] bg-gray-100 order-1 md:order-none">
