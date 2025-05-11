@@ -4,6 +4,8 @@ import ManifestationHero from "@/components/programs/manifestation/Hero";
 import ManifestationTrainerProfile from "@/components/programs/manifestation/TrainerProfile";
 import ManifestationBanner from "@/components/programs/manifestation/Banner";
 import TransformationSteps from "@/components/programs/manifestation/TransformationSteps";
+import FitnessTestimonials from "@/components/programs/fitness/Testimonials"
+
 // Import other manifestation-specific components here when they are created, e.g.:
 // import ManifestationSuccessStories from "@/components/programs/manifestation/SuccessStories";
 // import ManifestationTransformations from "@/components/programs/manifestation/Transformations";
@@ -22,6 +24,7 @@ export default function ManifestationPage() {
         {/* <ManifestationSuccessStories /> */}
         {/* <ManifestationTransformations /> */}
         {/* <ManifestationTestimonials /> */}
+        <FitnessTestimonials />
         <ManifestationBanner />
         {/* <ManifestationFAQ /> */}
       </main>
