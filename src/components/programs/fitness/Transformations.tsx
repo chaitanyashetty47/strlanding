@@ -39,7 +39,7 @@ const transformations: TransformationItem[] = [
     title: "Rediscover Confidence and Freedom",
     description: "Regain Mobility and Feel Empowered in Your Own Body.",
     isCustomIcon: true,
-    iconPath: "/running-person.svg",
+    iconPath: "/self-confidence.png",
     color: "#FFA500",
     lightColor: "rgba(255, 165, 0, 0.1)"
   },
