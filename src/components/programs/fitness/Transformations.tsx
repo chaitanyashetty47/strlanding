@@ -86,7 +86,6 @@ export default function Transformations() {
                       width={32}
                       height={32}
                       className="object-contain"
-                      style={{ filter: `brightness(0) saturate(100%) ${item.color === '#ffde21' ? 'invert(89%) sepia(27%) saturate(7482%) hue-rotate(359deg) brightness(103%) contrast(104%)' : ''}` }}
                     />
                   </div>
                 ) : (
