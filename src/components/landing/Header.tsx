@@ -47,7 +47,6 @@ export default function Header() {
 {/* <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg> */}
               </button>
               <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all z-50">
-                <a href="/programs" className="block px-6 py-3 text-gray-800 hover:bg-gray-100 hover:text-[#F31818] rounded-t-lg">All Programs</a>
                 <a href="/programs/fitness" className="block px-6 py-3 text-gray-800 hover:bg-gray-100 hover:text-[#F31818]">Fitness</a>
                 <a href="/programs/psychological" className="block px-6 py-3 text-gray-800 hover:bg-gray-100 hover:text-[#F31818]">Psychological</a>
                 <a href="/programs/manifestation" className="block px-6 py-3 text-gray-800 hover:bg-gray-100 hover:text-[#F31818] rounded-b-lg">Manifestation</a>
