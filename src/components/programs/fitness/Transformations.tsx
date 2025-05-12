@@ -1,6 +1,6 @@
 "use client"
 
-import { HeartPulse, Brain, Scale, Sparkles, LucideIcon } from 'lucide-react'
+import { HeartPulse, Scale, Sparkles, LucideIcon } from 'lucide-react'
 import Image from 'next/image'
 
 interface TransformationItem {
@@ -24,7 +24,8 @@ const transformations: TransformationItem[] = [
   {
     title: "Build Strength Beyond Limits",
     description: "Develop Physical and Mental Resilience to Conquer Life's Toughest Challenge.",
-    icon: Brain,
+    isCustomIcon: true,
+    iconPath: "/dumbbell.png",
     color: "#00D115",
     lightColor: "rgba(0, 209, 21, 0.1)"
   },
@@ -39,7 +40,7 @@ const transformations: TransformationItem[] = [
     title: "Rediscover Confidence and Freedom",
     description: "Regain Mobility and Feel Empowered in Your Own Body.",
     isCustomIcon: true,
-    iconPath: "/running-person.svg",
+    iconPath: "/self-confidence.png",
     color: "#FFA500",
     lightColor: "rgba(255, 165, 0, 0.1)"
   },
@@ -86,7 +87,6 @@ export default function Transformations() {
                       width={32}
                       height={32}
                       className="object-contain"
-                      style={{ filter: `brightness(0) saturate(100%) ${item.color === '#ffde21' ? 'invert(89%) sepia(27%) saturate(7482%) hue-rotate(359deg) brightness(103%) contrast(104%)' : ''}` }}
                     />
                   </div>
                 ) : (

@@ -57,6 +57,7 @@ export default function RootLayout({
       </Script>
       <noscript>
         <img
+          alt="Facebook Pixel"
           height="1"
           width="1"
           style={{ display: "none" }}

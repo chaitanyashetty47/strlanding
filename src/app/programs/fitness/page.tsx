@@ -1,7 +1,7 @@
 "use client"
 
 import Header from '@/components/landing/Header'
-import Banner from '@/components/landing/Banner'
+import Banner from '@/components/programs/fitness/Banner'
 import Footer from "@/components/landing/Footer"
 import FitnessHero from "@/components/programs/fitness/Hero"
 import SuccessStories from "@/components/programs/fitness/SuccessStories"
