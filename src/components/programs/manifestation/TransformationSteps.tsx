@@ -40,7 +40,7 @@ const transformationSteps: TransformationStepItem[] = [
     title: "Embrace Inspired Action",
     description: "Learn to recognize and act on intuitive nudges and opportunities that lead you to your dreams.",
     icon: Gift, // Using Gift as a metaphor for receiving opportunities or inspired ideas (could be Lightbulb)
-    color: "#FF6F00", // A stronger orange for action
+    color: "#FFA040", // A stronger orange for action
     lightColor: "rgba(255, 111, 0, 0.1)"
   },
   {
