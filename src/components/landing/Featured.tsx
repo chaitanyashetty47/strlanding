@@ -28,40 +28,27 @@ export default function Featured() {
         Also Featured In
       </h2>
       <div className="flex flex-row space-x-9 justify-center">
-        {/* <Logo 
-          src="/indiaflux.jpg" 
-          alt="India Flux Logo" 
-          width={400} 
-          height={15} 
-          href="https://indianflux.com/aditya-mandan-the-para-powerlifter-and-founder-of-stentor/" 
-        /> */}
-        {/* <Logo 
-          src="/indiascoop.png" 
-          alt="India Scoop Logo" 
-          width={500} 
-          height={48} 
-          href="https://medium.com/@digitalscoopindia/aditya-mandan-the-para-powerlifter-and-founder-of-stentor-778f2bd995e1"
-        /> */}
-        {/* <Logo 
-          src="/bestofhindustan.jpg" 
-          alt="Best of Hindustan Logo" 
-          width={600} 
-          height={100} 
-          href="https://bestofhindustan.com/aditya-mandan-the-para-powerlifter-and-founder-of-stentor/"
-        /> */}
-         {/* <Logo 
-          src="/entbytes.jpg" 
-          alt="Entrepreneur Bytes" 
-          width={600} 
-          height={100} 
-          href="https://theentrepreneurbytes.com/aditya-mandan-the-para-powerlifter-and-founder-of-stentor/"
-        /> */}
+     
         <Logo 
           src="/zeebiz.jpg" 
           alt="Zee Business" 
           width={300} 
           height={300} 
           href="https://youtu.be/yNR2nag2bxY?si=nKXvHjeBSn7vK1Ve"
+        />
+        <Logo 
+          src="/dailyhunt1.jpg" 
+          alt="DailyHunt" 
+          width={100} 
+          height={300} 
+          href="https://m.dailyhunt.in/news/india/english/r+news+india-epaper-dhfacc36dfce9c4bb68db0e89d033c921b/strentor+the+space+where+your+mind+body+soul+finally+sync+up-newsid-dhfacc36dfce9c4bb68db0e89d033c921b_a3f1cd10314611f0bd7e4ef0a55aa118?sm=Y"
+        />
+        <Logo 
+          src="/startupstory1.jpg" 
+          alt="The Startup Story" 
+          width={300} 
+          height={300} 
+          href="https://thestartupstory.co.in/index.php/2025/04/23/strentor-a-new-era-of-holistic-coaching-and-wellness"
         />
         <Logo 
           src="/gameroom.jpg" 

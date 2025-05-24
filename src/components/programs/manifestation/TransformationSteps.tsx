@@ -2,7 +2,7 @@
 
 import  React  from 'react'
 import { Eye, Sparkles, Gift, ShieldCheck, LucideIcon, Brain } from 'lucide-react' // Example icons
-import Image from 'next/image' // If you plan to use custom image icon
+import Image from 'next/image' // If you plan to use custom image icons
 
 interface TransformationStepItem {
   title: string;
