@@ -46,7 +46,7 @@ export default function Featured() {
         <Logo 
           src="/startupstory1.jpg" 
           alt="The Startup Story" 
-          width={300} 
+          width={300}   
           height={300} 
           href="https://thestartupstory.co.in/index.php/2025/04/23/strentor-a-new-era-of-holistic-coaching-and-wellness"
         />
