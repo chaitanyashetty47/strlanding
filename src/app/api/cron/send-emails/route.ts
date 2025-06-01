@@ -11,9 +11,15 @@ const ABANDONMENT_THRESHOLD_MS = 24 * 60 * 60 * 1000;
 
 export async function GET(request: NextRequest) {
   // Verify the request is from Vercel Cron service
-  const cronHeader = request.headers.get('x-vercel-cron');
-  if (!cronHeader) {
-    return NextResponse.json({ message: 'Unauthorized - Not from Vercel Cron' }, { status: 401 });
+  // const cronHeader = request.headers.get('x-vercel-cron');
+  // if (!cronHeader) {
+  //   return NextResponse.json({ message: 'Unauthorized - Not from Vercel Cron' }, { status: 401 });
+  // }
+  const authHeader = request.headers.get('authorization');
+  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+    return new Response('Unauthorized', {
+      status: 401,
+    });
   }
 
   try {
