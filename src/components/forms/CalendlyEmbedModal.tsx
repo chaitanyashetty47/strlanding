@@ -17,7 +17,14 @@ interface CalendlyEmbedModalProps {
 
 declare global {
   interface Window {
-    Calendly: any;
+    Calendly?: {
+      initInlineWidget?: (options: {
+        url: string;
+        parentElement: HTMLElement;
+        prefill?: { email?: string };
+        utm?: { utmSource?: string; utmMedium?: string; utmCampaign?: string };
+      }) => void;
+    };
   }
 }
 
@@ -112,18 +119,20 @@ export const CalendlyEmbedModal: React.FC<CalendlyEmbedModalProps> = ({
       await new Promise(resolve => setTimeout(resolve, 100));
       
       // Initialize the widget
-      window.Calendly.initInlineWidget({
-        url: 'https://calendly.com/strentor/strentor-services',
-        parentElement: embedRef.current,
-        prefill: {
-          email: userEmail
-        },
-        utm: {
-          utmSource: 'website',
-          utmMedium: 'inline_embed',
-          utmCampaign: 'discovery_call'
-        }
-      });
+      if (window.Calendly?.initInlineWidget) {
+        window.Calendly.initInlineWidget({
+          url: 'https://calendly.com/strentor/strentor-services',
+          parentElement: embedRef.current,
+          prefill: {
+            email: userEmail
+          },
+          utm: {
+            utmSource: 'website',
+            utmMedium: 'inline_embed',
+            utmCampaign: 'discovery_call'
+          }
+        });
+      }
       
       setIsInitialized(true);
       setIsLoading(false);
@@ -145,8 +154,7 @@ export const CalendlyEmbedModal: React.FC<CalendlyEmbedModalProps> = ({
         attempts++;
         
         // Check if Calendly is available and has the required methods
-        if (window.Calendly && 
-            window.Calendly.initInlineWidget && 
+        if (window.Calendly?.initInlineWidget && 
             typeof window.Calendly.initInlineWidget === 'function' &&
             embedRef.current) {
           resolve();
@@ -168,7 +176,7 @@ export const CalendlyEmbedModal: React.FC<CalendlyEmbedModalProps> = ({
   const loadCalendlyScript = (): Promise<void> => {
     return new Promise((resolve, reject) => {
       // If Calendly is already loaded and ready, resolve immediately
-      if (window.Calendly && window.Calendly.initInlineWidget) {
+      if (window.Calendly?.initInlineWidget) {
         resolve();
         return;
       }
@@ -182,7 +190,7 @@ export const CalendlyEmbedModal: React.FC<CalendlyEmbedModalProps> = ({
         
         const checkExistingScript = () => {
           checkAttempts++;
-          if (window.Calendly && window.Calendly.initInlineWidget) {
+          if (window.Calendly?.initInlineWidget) {
             resolve();
           } else if (checkAttempts >= maxCheckAttempts) {
             reject(new Error('Existing Calendly script failed to load'));
@@ -206,7 +214,7 @@ export const CalendlyEmbedModal: React.FC<CalendlyEmbedModalProps> = ({
         // Script loaded, but wait for Calendly object to be ready
         const checkCalendlyReady = () => {
           scriptCheckAttempts++;
-          if (window.Calendly && window.Calendly.initInlineWidget) {
+          if (window.Calendly?.initInlineWidget) {
             resolve();
           } else if (scriptCheckAttempts >= maxScriptCheckAttempts) {
             reject(new Error('Calendly object not ready after script load'));

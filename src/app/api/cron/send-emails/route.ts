@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { google } from 'googleapis';
+import { google, sheets_v4 } from 'googleapis';
 import { sendEmail, getEmailSubject } from '@/lib/email';
 import { getEmailTemplateComponent } from '@/emails';
 
@@ -142,7 +142,7 @@ function calculateNextEmailTimestamp(currentDay: number): string {
 }
 
 // Helper function to convert calendly_abandoned_pending to calendly_abandoned
-async function convertToAbandonedAndSendEmail(sheets: any, rowIndex: number, email: string) {
+async function convertToAbandonedAndSendEmail(sheets: sheets_v4.Sheets, rowIndex: number, email: string) {
   try {
     // Send Day 1 Calendly Abandoned email
     const templateComponent = getEmailTemplateComponent('calendly_abandoned', 1);
@@ -202,7 +202,7 @@ async function convertToAbandonedAndSendEmail(sheets: any, rowIndex: number, ema
 }
 
 // Helper function to send scheduled email
-async function sendScheduledEmail(sheets: any, rowIndex: number, email: string, campaignType: string, day: number) {
+async function sendScheduledEmail(sheets: sheets_v4.Sheets, rowIndex: number, email: string, campaignType: string, day: number) {
   try {
     // Send email
     const templateComponent = getEmailTemplateComponent(campaignType, day);
@@ -261,7 +261,7 @@ async function sendScheduledEmail(sheets: any, rowIndex: number, email: string, 
 }
 
 // Helper function to update campaign status
-async function updateCampaignStatus(sheets: any, rowIndex: number, status: string) {
+async function updateCampaignStatus(sheets: sheets_v4.Sheets, rowIndex: number, status: string) {
   const range = `Email Campaigns!F${rowIndex}`;
   await sheets.spreadsheets.values.update({
     spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID,

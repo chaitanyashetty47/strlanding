@@ -55,11 +55,11 @@ export async function POST(request: NextRequest) {
         details: result.error 
       }, { status: 500 });
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error in test-email route:', error);
     return NextResponse.json({ 
       error: 'Internal server error', 
-      details: error.message 
+      details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
   }
 } 

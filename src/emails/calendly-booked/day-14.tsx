@@ -65,11 +65,11 @@ export const CalendlyBookedDay14Email = ({
           <Text style={ctaContent}>
             When you hang up from today's call, you'll have:
           </Text>
-          <Text style={bulletPoint">✅ A crystal-clear vision of your transformed life</Text>
-          <Text style={bulletPoint">✅ A personalized roadmap to get there</Text>
-          <Text style={bulletPoint">✅ Immediate action steps to start today</Text>
-          <Text style={bulletPoint">✅ The confidence that transformation is possible</Text>
-          <Text style={bulletPoint">✅ A partner committed to your success</Text>
+          <Text style={bulletPoint}>✅ A crystal-clear vision of your transformed life</Text>
+          <Text style={bulletPoint}>✅ A personalized roadmap to get there</Text>
+          <Text style={bulletPoint}>✅ Immediate action steps to start today</Text>
+          <Text style={bulletPoint}>✅ The confidence that transformation is possible</Text>
+          <Text style={bulletPoint}>✅ A partner committed to your success</Text>
         </Section>
         
         <Text style={text}>

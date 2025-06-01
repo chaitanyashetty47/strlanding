@@ -29,28 +29,28 @@ export type EmailDay = 1 | 2 | 5 | 8 | 11 | 14;
 
 export interface EmailTemplateMap {
   waitlist: {
-    1: any;
-    2: any;
-    5: any;
-    8: any;
-    11: any;
-    14: any;
+    1: React.ComponentType<Record<string, unknown>>;
+    2: React.ComponentType<Record<string, unknown>>;
+    5: React.ComponentType<Record<string, unknown>>;
+    8: React.ComponentType<Record<string, unknown>>;
+    11: React.ComponentType<Record<string, unknown>>;
+    14: React.ComponentType<Record<string, unknown>>;
   };
   calendly_booked: {
-    1: any;
-    2: any;
-    5: any;
-    8: any;
-    11: any;
-    14: any;
+    1: React.ComponentType<Record<string, unknown>>;
+    2: React.ComponentType<Record<string, unknown>>;
+    5: React.ComponentType<Record<string, unknown>>;
+    8: React.ComponentType<Record<string, unknown>>;
+    11: React.ComponentType<Record<string, unknown>>;
+    14: React.ComponentType<Record<string, unknown>>;
   };
   calendly_abandoned: {
-    1: any;
-    2: any;
-    5: any;
-    8: any;
-    11: any;
-    14: any;
+    1: React.ComponentType<Record<string, unknown>>;
+    2: React.ComponentType<Record<string, unknown>>;
+    5: React.ComponentType<Record<string, unknown>>;
+    8: React.ComponentType<Record<string, unknown>>;
+    11: React.ComponentType<Record<string, unknown>>;
+    14: React.ComponentType<Record<string, unknown>>;
   };
 }
 
@@ -65,13 +65,13 @@ function isValidEmailDay(day: number): day is EmailDay {
 }
 
 // Helper function to get the correct email template component
-export function getEmailTemplateComponent(campaignType: string, day: number): React.ComponentType<any> | null {
+export function getEmailTemplateComponent(campaignType: string, day: number): React.ComponentType<Record<string, unknown>> | null {
   // Type guards to ensure we have valid inputs
   if (!isValidCampaignType(campaignType) || !isValidEmailDay(day)) {
     return null;
   }
 
-  const templates: Record<CampaignType, Record<EmailDay, React.ComponentType<any> | null>> = {
+  const templates: Record<CampaignType, Record<EmailDay, React.ComponentType<Record<string, unknown>> | null>> = {
     waitlist: {
       1: WaitlistDay1Email,
       2: WaitlistDay2Email,

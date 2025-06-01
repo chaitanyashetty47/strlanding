@@ -44,7 +44,7 @@ export const CalendlyBookedDay11Email = ({
           </Text>
           <Text style={bulletPoint}>📈 <strong>Clarity Worth $1,000:</strong> Clear direction eliminates months of trial and error</Text>
           <Text style={bulletPoint}>🎯 <strong>Strategy Worth $2,500:</strong> A personalized roadmap tailored to your unique situation</Text>
-          <Text style={bulletPoint">💡 <strong>Insights Worth $5,000:</strong> Expert knowledge that would take years to learn yourself</Text>
+          <Text style={bulletPoint}>💡 <strong>Insights Worth $5,000:</strong> Expert knowledge that would take years to learn yourself</Text>
           <Text style={bulletPoint}>🚀 <strong>Acceleration Worth $10,000:</strong> Fast-track your progress by avoiding common pitfalls</Text>
         </Section>
         
@@ -53,8 +53,8 @@ export const CalendlyBookedDay11Email = ({
           <Text style={bulletPoint}>📝 <strong>Come Prepared:</strong> Have your goals written down and challenges identified</Text>
           <Text style={bulletPoint}>🔍 <strong>Be Specific:</strong> The more detail you provide, the more customized our advice</Text>
           <Text style={bulletPoint}>💭 <strong>Think Long-term:</strong> Consider where you want to be in 6-12 months</Text>
-          <Text style={bulletPoint">🎯 <strong>Stay Open:</strong> Be ready to challenge your current approach</Text>
-          <Text style={bulletPoint">⚡ <strong>Take Action:</strong> Commit to implementing what you learn</Text>
+          <Text style={bulletPoint}>🎯 <strong>Stay Open:</strong> Be ready to challenge your current approach</Text>
+          <Text style={bulletPoint}>⚡ <strong>Take Action:</strong> Commit to implementing what you learn</Text>
         </Section>
         
         <Text style={investmentMindset}>
@@ -63,11 +63,11 @@ export const CalendlyBookedDay11Email = ({
         
         <Section style={outcomeSection}>
           <Text style={outcomeTitle}>🏆 Expected Outcomes</Text>
-          <Text style={bulletPoint">✅ Crystal clear vision of your transformation goals</Text>
-          <Text style={bulletPoint">✅ Personalized strategy roadmap with specific milestones</Text>
-          <Text style={bulletPoint">✅ Immediate action steps you can implement today</Text>
-          <Text style={bulletPoint">✅ Understanding of what support you need to succeed</Text>
-          <Text style={bulletPoint">✅ Confidence in your path forward</Text>
+          <Text style={bulletPoint}>✅ Crystal clear vision of your transformation goals</Text>
+          <Text style={bulletPoint}>✅ Personalized strategy roadmap with specific milestones</Text>
+          <Text style={bulletPoint}>✅ Immediate action steps you can implement today</Text>
+          <Text style={bulletPoint}>✅ Understanding of what support you need to succeed</Text>
+          <Text style={bulletPoint}>✅ Confidence in your path forward</Text>
         </Section>
         
         <Text style={text}>

@@ -8,8 +8,8 @@ const fromEmail = process.env.RESEND_FROM_EMAIL || 'noreply@strentor.com';
 export interface EmailSendParams {
   to: string;
   subject: string;
-  templateComponent: React.ComponentType<any>;
-  templateProps?: Record<string, any>;
+  templateComponent: React.ComponentType<Record<string, unknown>>;
+  templateProps?: Record<string, unknown>;
   from?: string;
 }
 
