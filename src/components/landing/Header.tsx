@@ -5,12 +5,26 @@ import Image from "next/image";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { EmailCaptureModal } from "@/components/forms/EmailCaptureModal";
+import { CalendlyEmbedModal } from "@/components/forms/CalendlyEmbedModal";
 import Link from "next/link"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [showEmailCapture, setShowEmailCapture] = useState(false);
+  const [showCalendlyEmbed, setShowCalendlyEmbed] = useState(false);
+  const [capturedEmail, setCapturedEmail] = useState("");
 
+  const handleBookingClick = () => {
+    setShowEmailCapture(true);
+  };
+
+  const handleEmailCaptured = (email: string) => {
+    setCapturedEmail(email);
+    setShowEmailCapture(false);
+    setShowCalendlyEmbed(true);
+  };
 
   return (
     <>
@@ -56,7 +70,7 @@ export default function Header() {
             <a href="https://empowerment-hub.strentor.com/"  className="block hover:text-red-500 py-2">Empowerment Hub</a>     
             <Button 
               className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
-              onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
+              onClick={handleBookingClick}
             >
               <span className="whitespace-pre-wrap text-center text-sm font-bold leading-none tracking-tight text-white lg:text-lg">
                Book Your Discovery Call
@@ -73,13 +87,34 @@ export default function Header() {
             <a href="/programs" className="block hover:text-red-500 py-2">Programs</a>      
             <a href="/community" className="block hover:text-red-500 py-2">Community</a>
             <a href="https://empowerment-hub.strentor.com/"  className="block hover:text-red-500 py-2">Empowerment Hub</a>     
-          
+            <Button 
+              className="shadow-2xl h-10 rounded-full bg-gradient-to-b from-red-500 to-red-700"
+              onClick={handleBookingClick}
+            >
+              <span className="whitespace-pre-wrap text-center text-sm font-bold leading-none tracking-tight text-white lg:text-lg">
+               Book Your Discovery Call
+              </span>
+            </Button>
           </div>
         )}
       </header>
 
       {/* Contact Form Dialog */}
       <ContactForm open={showForm} onOpenChange={setShowForm} />
+      
+      {/* Email Capture Modal */}
+      <EmailCaptureModal 
+        open={showEmailCapture} 
+        onOpenChange={setShowEmailCapture}
+        onEmailCaptured={handleEmailCaptured}
+      />
+      
+      {/* Calendly Embed Modal */}
+      <CalendlyEmbedModal 
+        open={showCalendlyEmbed}
+        onOpenChange={setShowCalendlyEmbed}
+        userEmail={capturedEmail}
+      />
     </>
   );
 }

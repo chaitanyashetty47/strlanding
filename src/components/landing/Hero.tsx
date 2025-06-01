@@ -5,16 +5,31 @@ import { useState } from "react"
 import Image from "next/image"
 import { ContactForm } from "@/components/forms/ContactForm"
 import { WaitlistForm } from "../forms/WaitlistForm"
+import { EmailCaptureModal } from "@/components/forms/EmailCaptureModal"
+import { CalendlyEmbedModal } from "@/components/forms/CalendlyEmbedModal"
 
 export default function Hero() {
   const [showForm, setShowForm] = useState(false)
   const [showWaitlist, setShowWaitlist] = useState(false)
+  const [showEmailCapture, setShowEmailCapture] = useState(false)
+  const [showCalendlyEmbed, setShowCalendlyEmbed] = useState(false)
+  const [capturedEmail, setCapturedEmail] = useState("")
 
   const guarantees = [
     "90 day satisfaction guarantee",
     "Instant Access to Our Personalised Services",
     "Instant Access to Our Community"
   ]
+
+  const handleBookingClick = () => {
+    setShowEmailCapture(true);
+  };
+
+  const handleEmailCaptured = (email: string) => {
+    setCapturedEmail(email);
+    setShowEmailCapture(false);
+    setShowCalendlyEmbed(true);
+  };
 
   // const handleJoinNowClick = () => {
   //   setShowForm(true)
@@ -45,7 +60,7 @@ export default function Hero() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  onClick={() => window.open("https://calendly.com/strentor/strentor-services", "_blank")}
+                  onClick={handleBookingClick}
                   className="h-14 px-8 text-lg rounded-full font-bold bg-[#F31818] hover:bg-[#F31818]/90 transition-all transform hover:scale-105"
                 >
                   Book Your Discovery Call
@@ -88,6 +103,20 @@ export default function Hero() {
 
       <ContactForm open={showForm} onOpenChange={setShowForm} />
       <WaitlistForm open={showWaitlist} onOpenChange={setShowWaitlist}/>
+      
+      {/* Email Capture Modal */}
+      <EmailCaptureModal 
+        open={showEmailCapture} 
+        onOpenChange={setShowEmailCapture}
+        onEmailCaptured={handleEmailCaptured}
+      />
+      
+      {/* Calendly Embed Modal */}
+      <CalendlyEmbedModal 
+        open={showCalendlyEmbed}
+        onOpenChange={setShowCalendlyEmbed}
+        userEmail={capturedEmail}
+      />
     </>
   )
 }

@@ -38,6 +38,94 @@ a {
   --strentor-blue: #0D97FF;
 }
 
+/* Calendly Embed Modal Styles */
+.calendly-embed-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  background: #ffffff;
+}
+
+/* Ensure Calendly iframe respects container bounds */
+.calendly-embed-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  border: none;
+  display: block;
+}
+
+/* Hide Calendly's default container issues */
+.calendly-embed-container .calendly-inline-widget {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+/* Ensure calendly badge doesn't interfere */
+.calendly-embed-container .calendly-badge-widget {
+  display: none !important;
+}
+
+/* Custom scrollbar for better UX */
+.calendly-embed-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.calendly-embed-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.calendly-embed-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.calendly-embed-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Firefox scrollbar */
+.calendly-embed-container {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/* Ensure modal backdrop doesn't scroll */
+.calendly-modal-open {
+  overflow: hidden !important;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 1024px) {
+  .calendly-embed-container {
+    min-height: calc(100vh - 80px);
+  }
+}
+
+@media (max-width: 768px) {
+  .calendly-embed-container {
+    min-height: calc(100vh - 60px);
+  }
+  
+  .calendly-embed-container iframe {
+    min-height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .calendly-embed-container {
+    min-height: calc(100vh - 50px);
+  }
+  
+  .calendly-embed-container iframe {
+    min-height: calc(100vh - 50px);
+  }
+}
+
 
 @layer base {
   :root {
