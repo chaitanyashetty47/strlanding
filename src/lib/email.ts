@@ -3,7 +3,7 @@ import { render } from '@react-email/render';
 import React from 'react';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.RESEND_FROM_EMAIL || 'noreply@strentor.com';
+const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
 
 export interface EmailSendParams {
   to: string;

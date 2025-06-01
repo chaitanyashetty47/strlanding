@@ -49,7 +49,10 @@ export async function GET(request: NextRequest) {
     let processedCount = 0;
     const results = [];
 
-    // Process each row (skip header row)
+    // Helper function to add delay between requests
+    const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+    
+    // Process each row (skip header row) with rate limiting
     for (let i = 1; i < rows.length; i++) {
       const row = rows[i];
       const [email, campaignType, signupTimestamp, lastEmailSentDay, nextEmailScheduledTimestamp, campaignStatus] = row;
@@ -57,6 +60,8 @@ export async function GET(request: NextRequest) {
       if (!email || !campaignType || !signupTimestamp) continue;
 
       try {
+        let shouldSendEmail = false;
+        
         // Handle calendly_abandoned_pending conversion
         if (campaignType === 'calendly_abandoned_pending') {
           const signupTime = new Date(signupTimestamp);
@@ -67,6 +72,12 @@ export async function GET(request: NextRequest) {
             const result = await convertToAbandonedAndSendEmail(sheets, i + 1, email);
             results.push(result);
             processedCount++;
+            shouldSendEmail = true;
+          }
+          
+          // Add rate limiting delay after sending email
+          if (shouldSendEmail) {
+            await delay(600); // 600ms delay = ~1.6 requests per second (safely under 2/sec limit)
           }
           continue;
         }
@@ -84,12 +95,18 @@ export async function GET(request: NextRequest) {
             const result = await sendScheduledEmail(sheets, i + 1, email, campaignType, nextDay);
             results.push(result);
             processedCount++;
+            shouldSendEmail = true;
           } else {
             // Campaign completed
             await updateCampaignStatus(sheets, i + 1, 'completed');
             results.push({ email, status: 'completed' });
             processedCount++;
           }
+        }
+        
+        // Add rate limiting delay after sending email
+        if (shouldSendEmail) {
+          await delay(600); // 600ms delay = ~1.6 requests per second (safely under 2/sec limit)
         }
       } catch (error) {
         console.error(`Error processing campaign for ${email}:`, error);
