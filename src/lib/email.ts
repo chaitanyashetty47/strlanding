@@ -32,7 +32,17 @@ export async function sendEmail({
       html,
     });
 
-    console.log('Email sent successfully:', result);
+    console.log('Email API result:', result);
+    
+    // FIXED: Check if Resend returned an error in the response
+    if (result.error) {
+      console.error('Resend API error:', result.error);
+      return { 
+        success: false, 
+        error: result.error.message || 'Email service error' 
+      };
+    }
+
     return { success: true, data: result };
   } catch (error) {
     console.error('Error sending email:', error);
